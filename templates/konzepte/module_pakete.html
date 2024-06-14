@@ -85,7 +85,7 @@
 <h4>Einfaches Modul erstellen</h4>
 <p>Ein Modul kann erstellt werden, indem man eine Python-Datei mit Funktionen und Variablen erstellt.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-1"><button class="copy-button" onclick="copyToClipboard('code-block-1-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-1"><button class="copy-button" onclick="copyToClipboard('code-block-1')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-1-code"># Erstellen eines einfachen Moduls (modul.py)
 def begruessung(name):
     return f"Hallo, {name}!"
@@ -99,7 +99,7 @@ print(modul.begruessung("Alice"))
 <h4>Ein Paket erstellen</h4>
 <p>Ein Paket ist ein Verzeichnis, das eine spezielle <code>__init__.py</code>-Datei enthält, die es Python ermöglicht, das Verzeichnis als Paket zu behandeln.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-2"><button class="copy-button" onclick="copyToClipboard('code-block-2-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-2"><button class="copy-button" onclick="copyToClipboard('code-block-2')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-2-code"># Erstellen eines Pakets
 # Verzeichnisstruktur:
 # meinpaket/
@@ -118,7 +118,7 @@ print(meinpaket.begruessung("Bob"))
 <h4>Standardbibliotheken verwenden</h4>
 <p>Python bietet viele nützliche Standardbibliotheken, die Sie in Ihren Projekten verwenden können.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-3"><button class="copy-button" onclick="copyToClipboard('code-block-3-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-3"><button class="copy-button" onclick="copyToClipboard('code-block-3')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-3-code"># Verwendung der Standardbibliothek
 import math
 
@@ -128,7 +128,7 @@ print(math.sqrt(16))
 <h4>Externe Pakete installieren</h4>
 <p>Sie können externe Pakete mit dem Paketmanager <code>pip</code> installieren.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-4')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-4"><button class="copy-button" onclick="copyToClipboard('code-block-4-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-4"><button class="copy-button" onclick="copyToClipboard('code-block-4')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-4-code"># Installation eines externen Pakets
 # Öffnen Sie ein Terminal und geben Sie folgendes ein:
 # pip install requests
@@ -156,26 +156,42 @@ print(response.status_code)
 <script src="/static/js/jquery-3.5.1.slim.min.js"></script>
 <script src="/static/js/popper.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
-<script>
-        function toggleCode(id) {
-            var codeBlock = document.getElementById(id);
-            if (codeBlock.classList.contains('visible')) {
-                codeBlock.classList.remove('visible');
-            } else {
-                codeBlock.classList.add('visible');
-            }
-        }
 
-        function copyToClipboard(id) {
-            var copyText = document.getElementById(id + '-code').textContent;
-            var textArea = document.createElement("textarea");
-            textArea.value = copyText;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand("Copy");
-            textArea.remove();
-            alert("Code kopiert!");
+
+<script>
+    function toggleCode(id) {
+        var codeBlock = document.getElementById(id);
+        if (codeBlock.classList.contains('visible')) {
+            codeBlock.classList.remove('visible');
+        } else {
+            codeBlock.classList.add('visible');
         }
+    }
+
+    function copyToClipboard(id) {
+        var copyText = document.querySelector('#' + id + ' pre code').textContent;
+        var textArea = document.createElement("textarea");
+        textArea.style.position = "fixed";
+        textArea.style.top = 0;
+        textArea.style.left = 0;
+        textArea.style.width = "2em";
+        textArea.style.height = "2em";
+        textArea.style.padding = 0;
+        textArea.style.border = "none";
+        textArea.style.outline = "none";
+        textArea.style.boxShadow = "none";
+        textArea.style.background = "transparent";
+        textArea.value = copyText;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand("copy");
+            alert("Code kopiert!");
+        } catch (err) {
+            console.error("Konnte nicht kopieren", err);
+        }
+        document.body.removeChild(textArea);
+    }
     </script>
 </body>
 </html>

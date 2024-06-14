@@ -89,7 +89,7 @@
 <h3>Beispiele für asynchrone Programmierung</h3>
 <p>Hier sind einige Beispiele für die Verwendung von asynchroner Programmierung in Python:</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-1"><button class="copy-button" onclick="copyToClipboard('code-block-1-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-1"><button class="copy-button" onclick="copyToClipboard('code-block-1')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-1-code"># Einfache async/await Verwendung
 import asyncio
 
@@ -104,7 +104,7 @@ asyncio.run(sage_hello())
 <h3>Mehrere Aufgaben gleichzeitig ausführen</h3>
 <p>Mit <code>asyncio.gather</code> können mehrere asynchrone Aufgaben parallel ausgeführt werden.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-2"><button class="copy-button" onclick="copyToClipboard('code-block-2-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-2"><button class="copy-button" onclick="copyToClipboard('code-block-2')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-2-code"># Mehrere Aufgaben gleichzeitig ausführen
 async def aufgabe(n):
     print(f"Aufgabe {n} gestartet")
@@ -120,7 +120,7 @@ asyncio.run(haupt())
 <h3>Asynchrone Funktionen kombinieren</h3>
 <p>Asynchrone Funktionen können verschachtelt und kombiniert werden, um komplexere Abläufe zu erstellen.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-3"><button class="copy-button" onclick="copyToClipboard('code-block-3-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-3"><button class="copy-button" onclick="copyToClipboard('code-block-3')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-3-code"># Verschachtelte asynchrone Funktionen
 async def aufgabe1():
     print("Aufgabe 1 gestartet")
@@ -155,26 +155,42 @@ asyncio.run(haupt())
 <script src="/static/js/jquery-3.5.1.slim.min.js"></script>
 <script src="/static/js/popper.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
-<script>
-        function toggleCode(id) {
-            var codeBlock = document.getElementById(id);
-            if (codeBlock.classList.contains('visible')) {
-                codeBlock.classList.remove('visible');
-            } else {
-                codeBlock.classList.add('visible');
-            }
-        }
 
-        function copyToClipboard(id) {
-            var copyText = document.getElementById(id + '-code').textContent;
-            var textArea = document.createElement("textarea");
-            textArea.value = copyText;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand("Copy");
-            textArea.remove();
-            alert("Code kopiert!");
+
+<script>
+    function toggleCode(id) {
+        var codeBlock = document.getElementById(id);
+        if (codeBlock.classList.contains('visible')) {
+            codeBlock.classList.remove('visible');
+        } else {
+            codeBlock.classList.add('visible');
         }
+    }
+
+    function copyToClipboard(id) {
+        var copyText = document.querySelector('#' + id + ' pre code').textContent;
+        var textArea = document.createElement("textarea");
+        textArea.style.position = "fixed";
+        textArea.style.top = 0;
+        textArea.style.left = 0;
+        textArea.style.width = "2em";
+        textArea.style.height = "2em";
+        textArea.style.padding = 0;
+        textArea.style.border = "none";
+        textArea.style.outline = "none";
+        textArea.style.boxShadow = "none";
+        textArea.style.background = "transparent";
+        textArea.value = copyText;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand("copy");
+            alert("Code kopiert!");
+        } catch (err) {
+            console.error("Konnte nicht kopieren", err);
+        }
+        document.body.removeChild(textArea);
+    }
     </script>
 </body>
 </html>

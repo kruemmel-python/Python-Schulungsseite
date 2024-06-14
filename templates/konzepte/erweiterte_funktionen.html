@@ -94,7 +94,7 @@
 <h3>Verwendung von <code>map()</code></h3>
 <p>Die <code>map()</code>-Funktion wendet eine Funktion auf jedes Element einer iterierbaren Sammlung (z.B. eine Liste) an und gibt eine Karte des Ergebnisses zurück.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-map')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-map"><button class="copy-button" onclick="copyToClipboard('code-block-map-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-map"><button class="copy-button" onclick="copyToClipboard('code-block-map')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-map-code">zahlen = [1, 2, 3, 4]
 quadrate = list(map(lambda x: x ** 2, zahlen))
 print(quadrate)  # Ausgabe: [1, 4, 9, 16]</code></pre>
@@ -102,7 +102,7 @@ print(quadrate)  # Ausgabe: [1, 4, 9, 16]</code></pre>
 <h3>Verwendung von <code>filter()</code></h3>
 <p>Die <code>filter()</code>-Funktion filtert Elemente einer iterierbaren Sammlung basierend auf einer Funktion, die entweder <code>True</code> oder <code>False</code> zurückgibt.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-filter')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-filter"><button class="copy-button" onclick="copyToClipboard('code-block-filter-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-filter"><button class="copy-button" onclick="copyToClipboard('code-block-filter')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-filter-code">zahlen = [1, 2, 3, 4, 5, 6]
 gerade_zahlen = list(filter(lambda x: x % 2 == 0, zahlen))
 print(gerade_zahlen)  # Ausgabe: [2, 4, 6]</code></pre>
@@ -110,7 +110,7 @@ print(gerade_zahlen)  # Ausgabe: [2, 4, 6]</code></pre>
 <h3>Verwendung von <code>reduce()</code></h3>
 <p>Die <code>reduce()</code>-Funktion, die im <code>functools</code>-Modul enthalten ist, wendet eine Funktion kumulativ auf die Elemente einer iterierbaren Sammlung an, sodass sie auf einen einzigen Wert reduziert werden.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-reduce')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-reduce"><button class="copy-button" onclick="copyToClipboard('code-block-reduce-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-reduce"><button class="copy-button" onclick="copyToClipboard('code-block-reduce')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-reduce-code">from functools import reduce
 zahlen = [1, 2, 3, 4]
 produkt = reduce(lambda x, y: x * y, zahlen)
@@ -119,7 +119,7 @@ print(produkt)  # Ausgabe: 24</code></pre>
 <h3>Verwendung von <code>lambda</code>-Funktionen</h3>
 <p><code>lambda</code>-Funktionen sind kleine anonyme Funktionen, die mit dem Schlüsselwort <code>lambda</code> erstellt werden. Sie können überall dort verwendet werden, wo eine Funktion erforderlich ist.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-lambda')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-lambda"><button class="copy-button" onclick="copyToClipboard('code-block-lambda-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-lambda"><button class="copy-button" onclick="copyToClipboard('code-block-lambda')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-lambda-code">verdoppeln = lambda x: x * 2
 print(verdoppeln(5))  # Ausgabe: 10</code></pre>
 </div>
@@ -137,26 +137,42 @@ print(verdoppeln(5))  # Ausgabe: 10</code></pre>
 <script src="/static/js/jquery-3.5.1.slim.min.js"></script>
 <script src="/static/js/popper.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
-<script>
-        function toggleCode(id) {
-            var codeBlock = document.getElementById(id);
-            if (codeBlock.classList.contains('visible')) {
-                codeBlock.classList.remove('visible');
-            } else {
-                codeBlock.classList.add('visible');
-            }
-        }
 
-        function copyToClipboard(id) {
-            var copyText = document.getElementById(id + '-code').textContent;
-            var textArea = document.createElement("textarea");
-            textArea.value = copyText;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand("Copy");
-            textArea.remove();
-            alert("Code kopiert!");
+
+<script>
+    function toggleCode(id) {
+        var codeBlock = document.getElementById(id);
+        if (codeBlock.classList.contains('visible')) {
+            codeBlock.classList.remove('visible');
+        } else {
+            codeBlock.classList.add('visible');
         }
+    }
+
+    function copyToClipboard(id) {
+        var copyText = document.querySelector('#' + id + ' pre code').textContent;
+        var textArea = document.createElement("textarea");
+        textArea.style.position = "fixed";
+        textArea.style.top = 0;
+        textArea.style.left = 0;
+        textArea.style.width = "2em";
+        textArea.style.height = "2em";
+        textArea.style.padding = 0;
+        textArea.style.border = "none";
+        textArea.style.outline = "none";
+        textArea.style.boxShadow = "none";
+        textArea.style.background = "transparent";
+        textArea.value = copyText;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand("copy");
+            alert("Code kopiert!");
+        } catch (err) {
+            console.error("Konnte nicht kopieren", err);
+        }
+        document.body.removeChild(textArea);
+    }
     </script>
 </body>
 </html>

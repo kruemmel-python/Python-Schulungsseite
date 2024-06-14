@@ -92,7 +92,7 @@
 <h4>Singleton Pattern</h4>
 <p>Das Singleton Pattern stellt sicher, dass eine Klasse nur eine Instanz hat und bietet einen globalen Zugriffspunkt darauf.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-1"><button class="copy-button" onclick="copyToClipboard('code-block-1-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-1"><button class="copy-button" onclick="copyToClipboard('code-block-1')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-1-code"># Singleton Pattern
 class Singleton:
     _instance = None
@@ -111,7 +111,7 @@ print(s1 is s2)  # Ausgabe: True
 <h4>Factory Pattern</h4>
 <p>Das Factory Pattern bietet eine Möglichkeit zur Erstellung von Objekten, ohne den genauen Klassennamen angeben zu müssen.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-2"><button class="copy-button" onclick="copyToClipboard('code-block-2-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-2"><button class="copy-button" onclick="copyToClipboard('code-block-2')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-2-code"># Factory Pattern
 class Tier:
     def sprechen(self):
@@ -142,7 +142,7 @@ print(tier.sprechen())  # Ausgabe: Wau
 <h4>Observer Pattern</h4>
 <p>Das Observer Pattern definiert eine Abhängigkeit zwischen Objekten, so dass bei einer Zustandsänderung eines Objekts alle abhängigen Objekte benachrichtigt und aktualisiert werden.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-3"><button class="copy-button" onclick="copyToClipboard('code-block-3-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-3"><button class="copy-button" onclick="copyToClipboard('code-block-3')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-3-code"># Observer Pattern
 class Beobachter:
     def aktualisieren(self, nachricht):
@@ -188,26 +188,42 @@ subjekt.benachrichtige("Ein Ereignis ist aufgetreten")
 <script src="/static/js/jquery-3.5.1.slim.min.js"></script>
 <script src="/static/js/popper.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
-<script>
-        function toggleCode(id) {
-            var codeBlock = document.getElementById(id);
-            if (codeBlock.classList.contains('visible')) {
-                codeBlock.classList.remove('visible');
-            } else {
-                codeBlock.classList.add('visible');
-            }
-        }
 
-        function copyToClipboard(id) {
-            var copyText = document.getElementById(id + '-code').textContent;
-            var textArea = document.createElement("textarea");
-            textArea.value = copyText;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand("Copy");
-            textArea.remove();
-            alert("Code kopiert!");
+
+<script>
+    function toggleCode(id) {
+        var codeBlock = document.getElementById(id);
+        if (codeBlock.classList.contains('visible')) {
+            codeBlock.classList.remove('visible');
+        } else {
+            codeBlock.classList.add('visible');
         }
+    }
+
+    function copyToClipboard(id) {
+        var copyText = document.querySelector('#' + id + ' pre code').textContent;
+        var textArea = document.createElement("textarea");
+        textArea.style.position = "fixed";
+        textArea.style.top = 0;
+        textArea.style.left = 0;
+        textArea.style.width = "2em";
+        textArea.style.height = "2em";
+        textArea.style.padding = 0;
+        textArea.style.border = "none";
+        textArea.style.outline = "none";
+        textArea.style.boxShadow = "none";
+        textArea.style.background = "transparent";
+        textArea.value = copyText;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand("copy");
+            alert("Code kopiert!");
+        } catch (err) {
+            console.error("Konnte nicht kopieren", err);
+        }
+        document.body.removeChild(textArea);
+    }
     </script>
 </body>
 </html>

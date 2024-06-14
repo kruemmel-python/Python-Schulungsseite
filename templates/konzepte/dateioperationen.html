@@ -78,7 +78,7 @@
 <h3>Öffnen und Lesen von Dateien</h3>
 <p>Um eine Datei in Python zu öffnen und ihren Inhalt zu lesen, verwenden Sie die Funktion <code>open()</code>. Der Modus <code>'r'</code> steht für Lesen.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-1"><button class="copy-button" onclick="copyToClipboard('code-block-1-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-1"><button class="copy-button" onclick="copyToClipboard('code-block-1')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-1-code"># Eine Datei öffnen und ihren Inhalt lesen
 with open('beispiel.txt', 'r') as file:
     content = file.read()
@@ -88,7 +88,7 @@ with open('beispiel.txt', 'r') as file:
 <h3>Schreiben in Dateien</h3>
 <p>Um in eine Datei zu schreiben, verwenden Sie den Modus <code>'w'</code>. Wenn die Datei nicht existiert, wird sie erstellt. Wenn sie existiert, wird sie überschrieben.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-2"><button class="copy-button" onclick="copyToClipboard('code-block-2-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-2"><button class="copy-button" onclick="copyToClipboard('code-block-2')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-2-code"># Eine Datei im Schreibmodus öffnen und Text schreiben
 with open('beispiel.txt', 'w') as file:
     file.write('Hallo, Welt!')
@@ -97,7 +97,7 @@ with open('beispiel.txt', 'w') as file:
 <h3>Anhängen an Dateien</h3>
 <p>Um Text an eine bestehende Datei anzuhängen, verwenden Sie den Modus <code>'a'</code>.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-3"><button class="copy-button" onclick="copyToClipboard('code-block-3-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-3"><button class="copy-button" onclick="copyToClipboard('code-block-3')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-3-code"># Eine Datei im Anhängemodus öffnen und Text anhängen
 with open('beispiel.txt', 'a') as file:
     file.write('\nZusätzliche Zeile.')
@@ -106,7 +106,7 @@ with open('beispiel.txt', 'a') as file:
 <h3>Zeilenweises Lesen einer Datei</h3>
 <p>Man kann eine Datei auch zeilenweise lesen, indem man eine Schleife verwendet.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-4')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-4"><button class="copy-button" onclick="copyToClipboard('code-block-4-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-4"><button class="copy-button" onclick="copyToClipboard('code-block-4')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-4-code"># Zeilenweise Lesen einer Datei
 with open('beispiel.txt', 'r') as file:
     for line in file:
@@ -118,7 +118,7 @@ with open('beispiel.txt', 'r') as file:
 <h4>Dateien kopieren</h4>
 <p>Mit dem Modul <code>shutil</code> kann man Dateien kopieren.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-5')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-5"><button class="copy-button" onclick="copyToClipboard('code-block-5-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-5"><button class="copy-button" onclick="copyToClipboard('code-block-5')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-5-code"># Eine Datei kopieren
 import shutil
 shutil.copy('beispiel.txt', 'beispiel_kopie.txt')
@@ -127,7 +127,7 @@ shutil.copy('beispiel.txt', 'beispiel_kopie.txt')
 <h4>Dateien umbenennen</h4>
 <p>Mit dem Modul <code>os</code> kann man Dateien umbenennen.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-6')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-6"><button class="copy-button" onclick="copyToClipboard('code-block-6-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-6"><button class="copy-button" onclick="copyToClipboard('code-block-6')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-6-code"># Eine Datei umbenennen
 import os
 os.rename('beispiel.txt', 'neuer_name.txt')
@@ -136,7 +136,7 @@ os.rename('beispiel.txt', 'neuer_name.txt')
 <h4>Dateien löschen</h4>
 <p>Mit dem Modul <code>os</code> kann man Dateien löschen.</p>
 <button class="btn btn-link" onclick="toggleCode('code-block-7')">Beispielcode anzeigen</button>
-<div class="code-block" id="code-block-7"><button class="copy-button" onclick="copyToClipboard('code-block-7-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<div class="code-block" id="code-block-7"><button class="copy-button" onclick="copyToClipboard('code-block-7')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 <pre><code id="code-block-7-code"># Eine Datei löschen
 import os
 os.remove('neuer_name.txt')
@@ -157,24 +157,42 @@ os.remove('neuer_name.txt')
 <script src="/static/js/jquery-3.5.1.slim.min.js"></script>
 <script src="/static/js/popper.min.js"></script>
 <script src="/static/js/bootstrap.min.js"></script>
-<script>
-        function toggleCode(id) {
-            var codeBlock = document.getElementById(id);
-            if (codeBlock.classList.contains('visible')) {
-                codeBlock.classList.remove('visible');
-            } else {
-                codeBlock.classList.add('visible');
-            }
-        }
 
-        function copyToClipboard(id) {
-            var copyText = document.getElementById(id + '-code').textContent;
-            navigator.clipboard.writeText(copyText).then(function () {
-                alert("Code kopiert!");
-            }).catch(function (err) {
-                console.error('Fehler beim Kopieren in die Zwischenablage:', err);
-            });
+
+<script>
+    function toggleCode(id) {
+        var codeBlock = document.getElementById(id);
+        if (codeBlock.classList.contains('visible')) {
+            codeBlock.classList.remove('visible');
+        } else {
+            codeBlock.classList.add('visible');
         }
+    }
+
+    function copyToClipboard(id) {
+        var copyText = document.querySelector('#' + id + ' pre code').textContent;
+        var textArea = document.createElement("textarea");
+        textArea.style.position = "fixed";
+        textArea.style.top = 0;
+        textArea.style.left = 0;
+        textArea.style.width = "2em";
+        textArea.style.height = "2em";
+        textArea.style.padding = 0;
+        textArea.style.border = "none";
+        textArea.style.outline = "none";
+        textArea.style.boxShadow = "none";
+        textArea.style.background = "transparent";
+        textArea.value = copyText;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand("copy");
+            alert("Code kopiert!");
+        } catch (err) {
+            console.error("Konnte nicht kopieren", err);
+        }
+        document.body.removeChild(textArea);
+    }
     </script>
 </body>
 </html>
