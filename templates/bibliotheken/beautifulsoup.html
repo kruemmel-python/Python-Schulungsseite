@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeautifulSoup</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            display: none;
+            position: relative;
+        }
+
+            .code-block.visible {
+                display: block;
+            }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Python Schulungsseite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Startseite</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBibliotheken" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Bibliotheken
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownBibliotheken">
+                        <a class="dropdown-item" href="/bibliotheken/numpy">NumPy</a>
+                        <a class="dropdown-item" href="/bibliotheken/pandas">Pandas</a>
+                        <a class="dropdown-item" href="/bibliotheken/matplotlib">Matplotlib</a>
+                        <a class="dropdown-item" href="/bibliotheken/scikit_learn">Scikit-Learn</a>
+                        <a class="dropdown-item" href="/bibliotheken/tensorflow">TensorFlow</a>
+                        <a class="dropdown-item" href="/bibliotheken/flask">Flask</a>
+                        <a class="dropdown-item" href="/bibliotheken/django">Django</a>
+                        <a class="dropdown-item" href="/bibliotheken/beautifulsoup">BeautifulSoup</a>
+                        <a class="dropdown-item" href="/bibliotheken/requests">Requests</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/wiki">Wiki</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/quiz">Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4">BeautifulSoup</h1>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2>Einführung in BeautifulSoup</h2>
+        <p>BeautifulSoup ist eine Bibliothek zum Parsen von HTML- und XML-Dokumenten. Weitere Informationen finden Sie in der <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/" target="_blank">BeautifulSoup-Dokumentation</a>.</p>
+
+        <h3>Beispiele für die Verwendung von BeautifulSoup</h3>
+        <p>Hier sind einige Beispiele für die Verwendung von BeautifulSoup in Python:</p>
+
+        <h4>HTML-Dokument parsen</h4>
+        <button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-1">
+            <button class="copy-button" onclick="copyToClipboard('code-block-1-code')">Code kopieren</button>
+            <pre><code id="code-block-1-code">from bs4 import BeautifulSoup
+
+html_doc = """
+<html><head><title>Die Geschichte des Python</title></head>
+<body>
+<p class="title"><b>Die Geschichte des Python</b></p>
+<p class="story">Es war einmal ein Python-Entwickler...</p>
+</body></html>
+"""
+
+soup = BeautifulSoup(html_doc, 'html.parser')
+
+print(soup.title)
+print(soup.title.name)
+print(soup.title.string)
+print(soup.p)
+print(soup.p['class'])
+            </code></pre>
+        </div>
+
+        <h4>Daten extrahieren</h4>
+        <button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-2">
+            <button class="copy-button" onclick="copyToClipboard('code-block-2-code')">Code kopieren</button>
+            <pre><code id="code-block-2-code">from bs4 import BeautifulSoup
+import requests
+
+url = 'https://example.com'
+response = requests.get(url)
+
+soup = BeautifulSoup(response.text, 'html.parser')
+title = soup.find('title').get_text()
+print(title)
+            </code></pre>
+        </div>
+
+        <h4>Daten filtern</h4>
+        <button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-3">
+            <button class="copy-button" onclick="copyToClipboard('code-block-3-code')">Code kopieren</button>
+            <pre><code id="code-block-3-code">from bs4 import BeautifulSoup
+
+html_doc = """
+<html><head><title>Die Geschichte des Python</title></head>
+<body>
+<p class="title"><b>Die Geschichte des Python</b></p>
+<p class="story">Es war einmal ein Python-Entwickler...</p>
+<a href="http://example.com/python" class="python" id="link1">Python</a>
+<a href="http://example.com/snake" class="snake" id="link2">Snake</a>
+<a href="http://example.com/ruby" class="ruby" id="link3">Ruby</a>
+</body></html>
+"""
+
+soup = BeautifulSoup(html_doc, 'html.parser')
+links = soup.find_all('a', class_='python')
+for link in links:
+    print(link.get('href'))
+            </code></pre>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
+                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
+            </ul>
+            <p>© 2024 Python Schulungsseite</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function toggleCode(id) {
+            var codeBlock = document.getElementById(id);
+            if (codeBlock.classList.contains('visible')) {
+                codeBlock.classList.remove('visible');
+            } else {
+                codeBlock.classList.add('visible');
+            }
+        }
+
+        function copyToClipboard(id) {
+            var copyText = document.getElementById(id + '-code').textContent;
+            var textArea = document.createElement("textarea");
+            textArea.value = copyText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            textArea.remove();
+            alert("Code kopiert!");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Kontrollstrukturen</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            display: none;
+            position: relative;
+        }
+
+            .code-block.visible {
+                display: block;
+            }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Python Schulungsseite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Startseite</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Grundlagen
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/grundlagen">Grundlagen Übersicht</a>
+                        <a class="dropdown-item" href="/grundlagen/variablen">Variablen</a>
+                        <a class="dropdown-item" href="/grundlagen/listen">Listen</a>
+                        <a class="dropdown-item" href="/grundlagen/dictionaries">Dictionaries</a>
+                        <a class="dropdown-item" href="/grundlagen/tupel">Tupel</a>
+                        <a class="dropdown-item" href="/grundlagen/datentypen">Datentypen</a>
+                        <a class="dropdown-item" href="/grundlagen/funktionen">Funktionen</a>
+                        <a class="dropdown-item" href="/grundlagen/kontrollstrukturen">Kontrollstrukturen</a>
+                        <a class="dropdown-item" href="/grundlagen/klassen">Klassen</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/konzepte">Konzepte</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/wiki">Wiki</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/quiz">Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4">Python Kontrollstrukturen</h1>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2>Einführung in Kontrollstrukturen</h2>
+        <p>Kontrollstrukturen sind essenziell, um den Ablauf eines Programms zu steuern. Sie ermöglichen bedingte Ausführung, Schleifen und vieles mehr. Weitere Informationen zu Kontrollstrukturen in Python finden Sie in der <a href="https://docs.python.org/3/tutorial/controlflow.html" target="_blank">offiziellen Python-Dokumentation</a>.</p>
+
+        <h3>If-Else-Bedingungen</h3>
+        <p>If-Else-Bedingungen erlauben es, Code abhängig von bestimmten Bedingungen auszuführen.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-1">
+            <button class="copy-button" onclick="copyToClipboard('code-block-1-code')">Code kopieren</button>
+            <pre><code id="code-block-1-code"># If-Else-Bedingung
+x = 10
+if x > 5:
+    print("x ist größer als 5")
+else:
+    print("x ist kleiner oder gleich 5")
+            </code></pre>
+        </div>
+
+        <h3>For-Schleifen</h3>
+        <p>For-Schleifen werden verwendet, um über eine Sequenz (z.B. eine Liste, ein Tuple oder ein String) zu iterieren.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-2">
+            <button class="copy-button" onclick="copyToClipboard('code-block-2-code')">Code kopieren</button>
+            <pre><code id="code-block-2-code"># For-Schleife
+for i in range(5):
+    print(i)
+            </code></pre>
+        </div>
+
+        <h3>While-Schleifen</h3>
+        <p>While-Schleifen werden verwendet, um Code so lange auszuführen, wie eine bestimmte Bedingung erfüllt ist.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-3">
+            <button class="copy-button" onclick="copyToClipboard('code-block-3-code')">Code kopieren</button>
+            <pre><code id="code-block-3-code"># While-Schleife
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+            </code></pre>
+        </div>
+
+        <h3>Verschachtelte Schleifen</h3>
+        <p>Man kann Schleifen ineinander verschachteln, um komplexe Iterationen zu ermöglichen.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-4')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-4">
+            <button class="copy-button" onclick="copyToClipboard('code-block-4-code')">Code kopieren</button>
+            <pre><code id="code-block-4-code"># Verschachtelte Schleifen
+for i in range(3):
+    for j in range(2):
+        print(f"i = {i}, j = {j}")
+            </code></pre>
+        </div>
+
+        <h3>Break- und Continue-Anweisungen</h3>
+        <p>Mit den Anweisungen <code>break</code> und <code>continue</code> kann man den Ablauf von Schleifen steuern.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-5')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-5">
+            <button class="copy-button" onclick="copyToClipboard('code-block-5-code')">Code kopieren</button>
+            <pre><code id="code-block-5-code"># Break-Anweisung
+for i in range(5):
+    if i == 3:
+        break
+    print(i)
+
+# Continue-Anweisung
+for i in range(5):
+    if i == 3:
+        continue
+    print(i)
+            </code></pre>
+        </div>
+
+        <h3>Else in Schleifen</h3>
+        <p>Man kann in Python eine <code>else</code>-Klausel zu Schleifen hinzufügen, die ausgeführt wird, wenn die Schleife nicht durch ein <code>break</code> unterbrochen wird.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-6')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-6">
+            <button class="copy-button" onclick="copyToClipboard('code-block-6-code')">Code kopieren</button>
+            <pre><code id="code-block-6-code"># Else in Schleifen
+for i in range(5):
+    print(i)
+else:
+    print("Schleife beendet")
+
+# Else mit Break
+for i in range(5):
+    if i == 3:
+        break
+    print(i)
+else:
+    print("Schleife beendet")
+            </code></pre>
+        </div>
+
+        <h3>Pass-Anweisung</h3>
+        <p>Die <code>pass</code>-Anweisung kann verwendet werden, um eine leere Codeblock zu erstellen. Sie wird oft als Platzhalter verwendet.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-7')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-7">
+            <button class="copy-button" onclick="copyToClipboard('code-block-7-code')">Code kopieren</button>
+            <pre><code id="code-block-7-code"># Pass-Anweisung
+for i in range(5):
+    if i == 3:
+        pass  # Platzhalter, tut nichts
+    print(i)
+            </code></pre>
+        </div>
+
+        <h3>Weitere Informationen</h3>
+        <p>Weitere Informationen zu Kontrollstrukturen in Python finden Sie in der <a href="https://docs.python.org/3/tutorial/controlflow.html" target="_blank">offiziellen Python-Dokumentation</a>.</p>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
+                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
+            </ul>
+            <p>© 2024 Python Schulungsseite</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function toggleCode(id) {
+            var codeBlock = document.getElementById(id);
+            if (codeBlock.classList.contains('visible')) {
+                codeBlock.classList.remove('visible');
+            } else {
+                codeBlock.classList.add('visible');
+            }
+        }
+
+        function copyToClipboard(id) {
+            var copyText = document.getElementById(id + '-code').textContent;
+            var textArea = document.createElement("textarea");
+            textArea.value = copyText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            textArea.remove();
+            alert("Code kopiert!");
+        }
+    </script>
+</body>
+</html>

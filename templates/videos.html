@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ralf Krümmels Python für Anfänger</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Python Schulungsseite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Startseite</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/grundlagen">Grundlagen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/konzepte">Konzepte</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/wiki">Wiki</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/bibliotheken">Bibliotheken</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/quiz">Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4">Willkommen zu Python für Anfänger</h1>
+            <p class="lead">Lernen Sie Python auf einfache und verständliche Weise.</p>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/grundlagen.jpg') }}" class="card-img-top" alt="Grundlagen">
+                    <div class="card-body">
+                        <h5 class="card-title">Grundlagen</h5>
+                        <p class="card-text">Erlernen Sie die grundlegenden Konzepte der Python-Programmierung.</p>
+                        <a href="/grundlagen" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/konzepte.jpg') }}" class="card-img-top" alt="Konzepte">
+                    <div class="card-body">
+                        <h5 class="card-title">Konzepte</h5>
+                        <p class="card-text">Tauchen Sie tiefer in die fortgeschrittenen Konzepte der Python-Programmierung ein.</p>
+                        <a href="/konzepte" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/wiki.jpg') }}" class="card-img-top" alt="Wiki">
+                    <div class="card-body">
+                        <h5 class="card-title">Wiki</h5>
+                        <p class="card-text">Ein Nachschlagewerk für alle Python-bezogenen Fragen.</p>
+                        <a href="/wiki" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="{{ url_for('static', filename='images/bibliotheken.jpg') }}" class="card-img-top" alt="Bibliotheken">
+                    <div class="card-body">
+                        <h5 class="card-title">Bibliotheken</h5>
+                        <p class="card-text">Entdecken Sie die wichtigsten und am häufigsten verwendeten Bibliotheken in Python.</p>
+                        <a href="/bibliotheken" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
+                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
+            </ul>
+            <p>© 2024 Python Schulungsseite</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

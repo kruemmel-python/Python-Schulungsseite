@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Grundlagen</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .card {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Python Schulungsseite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Startseite</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Grundlagen
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/grundlagen">Grundlagen Übersicht</a>
+                        <a class="dropdown-item" href="/grundlagen/variablen">Variablen</a>
+                        <a class="dropdown-item" href="/grundlagen/listen">Listen</a>
+                        <a class="dropdown-item" href="/grundlagen/dictionaries">Dictionaries</a>
+                        <a class="dropdown-item" href="/grundlagen/tupel">Tupel</a>
+                        <a class="dropdown-item" href="/grundlagen/datentypen">Datentypen</a>
+                        <a class="dropdown-item" href="/grundlagen/funktionen">Funktionen</a>
+                        <a class="dropdown-item" href="/grundlagen/kontrollstrukturen">Kontrollstrukturen</a>
+                        <a class="dropdown-item" href="/grundlagen/klassen">Klassen</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/konzepte">Konzepte</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/wiki">Wiki</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/quiz">Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4">Python Grundlagen</h1>
+            <p class="lead">Erlernen Sie die grundlegenden Konzepte der Python-Programmierung.</p>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2>Übersicht der Grundlagen</h2>
+        <p>Hier finden Sie die wichtigsten Themen der Python-Grundlagen.</p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Variablen</h5>
+                        <p class="card-text">Erfahren Sie, wie Sie in Python Variablen verwenden und manipulieren können.</p>
+                        <a href="/grundlagen/variablen" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Listen</h5>
+                        <p class="card-text">Lernen Sie, wie Sie Listen in Python erstellen und verwenden können.</p>
+                        <a href="/grundlagen/listen" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Dictionaries</h5>
+                        <p class="card-text">Entdecken Sie, wie Sie Dictionaries in Python nutzen können.</p>
+                        <a href="/grundlagen/dictionaries" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Tupel</h5>
+                        <p class="card-text">Erfahren Sie mehr über Tupel und ihre Verwendung in Python.</p>
+                        <a href="/grundlagen/tupel" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Datentypen</h5>
+                        <p class="card-text">Lernen Sie die verschiedenen Datentypen in Python kennen.</p>
+                        <a href="/grundlagen/datentypen" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Funktionen</h5>
+                        <p class="card-text">Verstehen Sie, wie Sie Funktionen in Python definieren und verwenden können.</p>
+                        <a href="/grundlagen/funktionen" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Kontrollstrukturen</h5>
+                        <p class="card-text">Erfahren Sie, wie Kontrollstrukturen in Python funktionieren.</p>
+                        <a href="/grundlagen/kontrollstrukturen" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Klassen</h5>
+                        <p class="card-text">Lernen Sie, wie Sie Klassen in Python erstellen und verwenden können.</p>
+                        <a href="/grundlagen/klassen" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
+                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
+            </ul>
+            <p>© 2024 Python Schulungsseite</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

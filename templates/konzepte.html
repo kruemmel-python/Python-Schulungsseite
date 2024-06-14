@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Konzepte</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .card-deck .card {
+            min-width: 250px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Python Schulungsseite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Startseite</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Grundlagen
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/grundlagen">Grundlagen Übersicht</a>
+                        <a class="dropdown-item" href="/grundlagen/variablen">Variablen</a>
+                        <a class="dropdown-item" href="/grundlagen/listen">Listen</a>
+                        <a class="dropdown-item" href="/grundlagen/dictionaries">Dictionaries</a>
+                        <a class="dropdown-item" href="/grundlagen/tupel">Tupel</a>
+                        <a class="dropdown-item" href="/grundlagen/datentypen">Datentypen</a>
+                        <a class="dropdown-item" href="/grundlagen/funktionen">Funktionen</a>
+                        <a class="dropdown-item" href="/grundlagen/kontrollstrukturen">Kontrollstrukturen</a>
+                        <a class="dropdown-item" href="/grundlagen/klassen">Klassen</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownKonzepte" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Konzepte
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownKonzepte">
+                        <a class="dropdown-item" href="/konzepte">Konzepte Übersicht</a>
+                        <a class="dropdown-item" href="/konzepte/dateioperationen">Dateioperationen</a>
+                        <a class="dropdown-item" href="/konzepte/ausnahmebehandlung">Ausnahmebehandlung</a>
+                        <a class="dropdown-item" href="/konzepte/module_pakete">Module und Pakete</a>
+                        <a class="dropdown-item" href="/konzepte/listenverstaendnis">Listenverständnis</a>
+                        <a class="dropdown-item" href="/konzepte/generatoren_iteratoren">Generatoren und Iteratoren</a>
+                        <a class="dropdown-item" href="/konzepte/dekoratoren">Dekoratoren</a>
+                        <a class="dropdown-item" href="/konzepte/kontextmanager">Kontextmanager</a>
+                        <a class="dropdown-item" href="/konzepte/multithreading_multiprocessing">Multithreading und Multiprocessing</a>
+                        <a class="dropdown-item" href="/konzepte/asynchrone_programmierung">Asynchrone Programmierung</a>
+                        <a class="dropdown-item" href="/konzepte/unit_testing">Unit-Testing</a>
+                        <a class="dropdown-item" href="/konzepte/mocking">Mocking</a>
+                        <a class="dropdown-item" href="/konzepte/design_patterns">Design Patterns</a>
+                        <a class="dropdown-item" href="/konzepte/datenbankzugriffe">Datenbankzugriffe</a>
+                        <a class="dropdown-item" href="/konzepte/web_scraping">Web Scraping</a>
+                        <a class="dropdown-item" href="/konzepte/regular_expressions">Regular Expressions</a>
+                        <a class="dropdown-item" href="/konzepte/erweiterte_funktionen">Erweiterte Funktionen</a>
+                        <a class="dropdown-item" href="/konzepte/metaprogrammierung">Metaprogrammierung</a>
+                        <!-- Weitere Konzepte können hier hinzugefügt werden -->
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/wiki">Wiki</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/quiz">Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4">Python Konzepte</h1>
+            <p class="lead">Tauchen Sie tiefer in die Welt der Python-Programmierung ein.</p>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2>Übersicht der Konzepte</h2>
+        <p>Hier finden Sie die wichtigsten Themen der fortgeschrittenen Konzepte in Python.</p>
+        <div class="card-deck">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/konzepte.jpg') }}" class="card-img-top" alt="Dateioperationen">
+                <div class="card-body">
+                    <h5 class="card-title">Dateioperationen</h5>
+                    <p class="card-text">Lernen Sie, wie Sie Dateien lesen und schreiben.</p>
+                    <a href="/konzepte/dateioperationen" class="btn btn-primary">Mehr erfahren</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/konzepte.jpg') }}" class="card-img-top" alt="Ausnahmebehandlung">
+                <div class="card-body">
+                    <h5 class="card-title">Ausnahmebehandlung</h5>
+                    <p class="card-text">Erfahren Sie, wie Sie Fehler in Ihrem Code behandeln.</p>
+                    <a href="/konzepte/ausnahmebehandlung" class="btn btn-primary">Mehr erfahren</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/konzepte.jpg') }}" class="card-img-top" alt="Module und Pakete">
+                <div class="card-body">
+                    <h5 class="card-title">Module und Pakete</h5>
+                    <p class="card-text">Entdecken Sie, wie Sie Ihren Code modularisieren können.</p>
+                    <a href="/konzepte/module_pakete" class="btn btn-primary">Mehr erfahren</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/konzepte.jpg') }}" class="card-img-top" alt="Listenverständnis">
+                <div class="card-body">
+                    <h5 class="card-title">Listenverständnis</h5>
+                    <p class="card-text">Vertiefen Sie Ihr Wissen über Listen und deren Verwendung.</p>
+                    <a href="/konzepte/listenverstaendnis" class="btn btn-primary">Mehr erfahren</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/konzepte.jpg') }}" class="card-img-top" alt="Generatoren und Iteratoren">
+                <div class="card-body">
+                    <h5 class="card-title">Generatoren und Iteratoren</h5>
+                    <p class="card-text">Lernen Sie, wie Sie effizient mit großen Datenmengen arbeiten.</p>
+                    <a href="/konzepte/generatoren_iteratoren" class="btn btn-primary">Mehr erfahren</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/konzepte.jpg') }}" class="card-img-top" alt="Dekoratoren">
+                <div class="card-body">
+                    <h5 class="card-title">Dekoratoren</h5>
+                    <p class="card-text">Erfahren Sie, wie Sie Funktionen erweitern können.</p>
+                    <a href="/konzepte/dekoratoren" class="btn btn-primary">Mehr erfahren</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/konzepte.jpg') }}" class="card-img-top" alt="Kontextmanager">
+                <div class="card-body">
+                    <h5 class="card-title">Kontextmanager</h5>
+                    <p class="card-text">Lernen Sie, wie Sie Ressourcen effizient verwalten.</p>
+                    <a href="/konzepte/kontextmanager" class="btn btn-primary">Mehr erfahren</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/konzepte.jpg') }}" class="card-img-top" alt="Multithreading und Multiprocessing">
+                <div class="card-body">
+                    <h5 class="card-title">Multithreading und Multiprocessing</h5>
+                    <p class="card-text">Erfahren Sie, wie Sie parallele Aufgaben ausführen können.</p>
+                    <a href="/konzepte/multithreading_multiprocessing" class="btn btn-primary">Mehr erfahren</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/konzepte.jpg') }}" class="card-img-top" alt="Asynchrone Programmierung">
+                <div class="card-body">
+                    <h5 class="card-title">Asynchrone Programmierung</h5>
+                    <p class="card-text">Tauchen Sie ein in die Welt der asynchronen Programmierung.</p>
+                    <a href="/konzepte/asynchrone_programmierung" class="btn btn-primary">Mehr erfahren</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/konzepte.jpg') }}" class="card-img-top" alt="Unit-Testing">
+                <div class="card-body">
+                    <h5 class="card-title">Unit-Testing</h5>
+                    <p class="card-text">Erfahren Sie, wie Sie Ihre Software testen können.</p>
+                    <a href="/konzepte/unit_testing" class="btn btn-primary">Mehr erfahren</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/konzepte.jpg') }}" class="card-img-top" alt="Mocking">
+                <div class="card-body">
+                    <h5 class="card-title">Mocking</h5>
+                    <p class="card-text">Lernen Sie, wie Sie Testobjekte erstellen.</p>
+                    <a href="/konzepte/mocking" class="btn btn-primary">Mehr erfahren</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/konzepte.jpg') }}" class="card-img-top" alt="Design Patterns">
+                <div class="card-body">
+                    <h5 class="card-title">Design Patterns</h5>
+                    <p class="card-text">Erfahren Sie, wie Sie bewährte Muster in Ihrem Code verwenden können.</p>
+                    <a href="/konzepte/design_patterns" class="btn btn-primary">Mehr erfahren</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/konzepte.jpg') }}" class="card-img-top" alt="Datenbankzugriffe">
+                <div class="card-body">
+                    <h5 class="card-title">Datenbankzugriffe</h5>
+                    <p class="card-text">Lernen Sie, wie Sie mit Datenbanken arbeiten.</p>
+                    <a href="/konzepte/datenbankzugriffe" class="btn btn-primary">Mehr erfahren</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/konzepte.jpg') }}" class="card-img-top" alt="Web Scraping">
+                <div class="card-body">
+                    <h5 class="card-title">Web Scraping</h5>
+                    <p class="card-text">Erfahren Sie, wie Sie Daten aus dem Web extrahieren.</p>
+                    <a href="/konzepte/web_scraping" class="btn btn-primary">Mehr erfahren</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/konzepte.jpg') }}" class="card-img-top" alt="Regular Expressions">
+                <div class="card-body">
+                    <h5 class="card-title">Regular Expressions</h5>
+                    <p class="card-text">Lernen Sie, wie Sie Muster in Texten erkennen.</p>
+                    <a href="/konzepte/regular_expressions" class="btn btn-primary">Mehr erfahren</a>
+                </div>
+            </div>
+        </div>
+        <div class="card-deck">
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/konzepte.jpg') }}" class="card-img-top" alt="Erweiterte Funktionen">
+                <div class="card-body">
+                    <h5 class="card-title">Erweiterte Funktionen</h5>
+                    <p class="card-text">Entdecken Sie die erweiterten Funktionen von Python.</p>
+                    <a href="/konzepte/erweiterte_funktionen" class="btn btn-primary">Mehr erfahren</a>
+                </div>
+            </div>
+            <div class="card">
+                <img src="{{ url_for('static', filename='images/konzepte.jpg') }}" class="card-img-top" alt="Metaprogrammierung">
+                <div class="card-body">
+                    <h5 class="card-title">Metaprogrammierung</h5>
+                    <p class="card-text">Lernen Sie, wie Sie Code schreiben, der anderen Code manipuliert.</p>
+                    <a href="/konzepte/metaprogrammierung" class="btn btn-primary">Mehr erfahren</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
+                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
+            </ul>
+            <p>© 2024 Python Schulungsseite</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

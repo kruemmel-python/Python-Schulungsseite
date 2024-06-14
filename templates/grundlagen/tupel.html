@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Tupel</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            display: none;
+            position: relative;
+        }
+
+            .code-block.visible {
+                display: block;
+            }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Python Schulungsseite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Startseite</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Grundlagen
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/grundlagen">Grundlagen Übersicht</a>
+                        <a class="dropdown-item" href="/grundlagen/variablen">Variablen</a>
+                        <a class="dropdown-item" href="/grundlagen/listen">Listen</a>
+                        <a class="dropdown-item" href="/grundlagen/dictionaries">Dictionaries</a>
+                        <a class="dropdown-item" href="/grundlagen/tupel">Tupel</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/konzepte">Konzepte</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/wiki">Wiki</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/quiz">Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4">Python Tupel</h1>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2>Einführung in Tupel</h2>
+        <p>Tupel sind eine grundlegende Datenstruktur in Python, die ähnlich wie Listen verwendet wird, aber im Gegensatz zu Listen unveränderbar ist. Einmal erstellt, können die Elemente eines Tupels nicht mehr verändert werden.</p>
+        <p>Weitere Informationen zu Tupeln in Python finden Sie in der <a href="https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences" target="_blank">offiziellen Python-Dokumentation</a>.</p>
+
+        <h3>Erstellen von Tupeln</h3>
+        <p>Tupel können erstellt werden, indem man die Elemente in runde Klammern () schreibt, getrennt durch Kommas. Tupel können auch ohne Klammern erstellt werden, wenn mehrere Werte durch Kommas getrennt sind.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-1">
+            <button class="copy-button" onclick="copyToClipboard('code-block-1-code')">Code kopieren</button>
+            <pre><code id="code-block-1-code"># Ein einfaches Tupel
+person = ("Alice", 30, "Berlin")
+print(person)
+
+# Tupel ohne Klammern
+numbers = 1, 2, 3
+print(numbers)
+            </code></pre>
+        </div>
+
+        <h3>Zugriff auf Werte in Tupeln</h3>
+        <p>Auf Werte in einem Tupel kann mit Hilfe ihrer Indizes zugegriffen werden. Die Indizierung beginnt bei 0.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-2">
+            <button class="copy-button" onclick="copyToClipboard('code-block-2-code')">Code kopieren</button>
+            <pre><code id="code-block-2-code"># Zugriff auf Werte über Index
+person = ("Alice", 30, "Berlin")
+name = person[0]
+alter = person[1]
+stadt = person[2]
+print(name, alter, stadt)
+            </code></pre>
+        </div>
+
+        <h3>Entpacken von Tupeln</h3>
+        <p>Sie können die Elemente eines Tupels in einzelne Variablen entpacken. Dies wird auch Tuple Unpacking genannt.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-3">
+            <button class="copy-button" onclick="copyToClipboard('code-block-3-code')">Code kopieren</button>
+            <pre><code id="code-block-3-code"># Entpacken eines Tupels
+person = ("Alice", 30, "Berlin")
+name, alter, stadt = person
+print(name)
+print(alter)
+print(stadt)
+            </code></pre>
+        </div>
+
+        <h3>Tupel sind unveränderbar</h3>
+        <p>Einmal erstellt, können die Elemente eines Tupels nicht mehr verändert werden. Das bedeutet, dass Sie weder Elemente hinzufügen noch entfernen oder ändern können.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-4')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-4">
+            <button class="copy-button" onclick="copyToClipboard('code-block-4-code')">Code kopieren</button>
+            <pre><code id="code-block-4-code"># Unveränderbarkeit von Tupeln
+person = ("Alice", 30, "Berlin")
+# Dies führt zu einem Fehler:
+# person[1] = 31
+            </code></pre>
+        </div>
+
+        <h3>Verschachtelte Tupel</h3>
+        <p>Tupel können andere Tupel als Elemente enthalten. Dies ermöglicht die Erstellung komplexer Datenstrukturen.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-5')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-5">
+            <button class="copy-button" onclick="copyToClipboard('code-block-5-code')">Code kopieren</button>
+            <pre><code id="code-block-5-code"># Verschachtelte Tupel
+nested_tupel = (1, (2, 3), (4, 5, 6))
+print(nested_tupel)
+
+# Zugriff auf verschachtelte Elemente
+inner_tupel = nested_tupel[1]
+print(inner_tupel)
+print(inner_tupel[1])
+            </code></pre>
+        </div>
+
+        <h3>Tupel mit einer Liste vergleichen</h3>
+        <p>Obwohl Tupel und Listen ähnlich aussehen, gibt es einige wichtige Unterschiede zwischen ihnen. Der Hauptunterschied besteht darin, dass Tupel unveränderbar sind, während Listen veränderbar sind.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-6')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-6">
+            <button class="copy-button" onclick="copyToClipboard('code-block-6-code')">Code kopieren</button>
+            <pre><code id="code-block-6-code"># Vergleich zwischen Tupeln und Listen
+tupel = (1, 2, 3)
+liste = [1, 2, 3]
+
+# Tupel sind unveränderbar
+try:
+    tupel[0] = 0
+except TypeError as e:
+    print(e)
+
+# Listen sind veränderbar
+liste[0] = 0
+print(liste)
+            </code></pre>
+        </div>
+
+        <p>Weitere Informationen zu Tupeln und ihren Methoden finden Sie in der <a href="https://docs.python.org/3/tutorial/datastructures.html#tuples-and-sequences" target="_blank">offiziellen Python-Dokumentation</a>.</p>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
+                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
+            </ul>
+            <p>© 2024 Python Schulungsseite</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function toggleCode(id) {
+            var codeBlock = document.getElementById(id);
+            if (codeBlock.classList.contains('visible')) {
+                codeBlock.classList.remove('visible');
+            } else {
+                codeBlock.classList.add('visible');
+            }
+        }
+
+        function copyToClipboard(id) {
+            var copyText = document.getElementById(id + '-code').textContent;
+            var textArea = document.createElement("textarea");
+            textArea.value = copyText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            textArea.remove();
+            alert("Code kopiert!");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scikit-Learn</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            display: none;
+            position: relative;
+        }
+
+            .code-block.visible {
+                display: block;
+            }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Python Schulungsseite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Startseite</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBibliotheken" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Bibliotheken
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownBibliotheken">
+                        <a class="dropdown-item" href="/bibliotheken/numpy">NumPy</a>
+                        <a class="dropdown-item" href="/bibliotheken/pandas">Pandas</a>
+                        <a class="dropdown-item" href="/bibliotheken/matplotlib">Matplotlib</a>
+                        <a class="dropdown-item" href="/bibliotheken/scikit_learn">Scikit-Learn</a>
+                        <a class="dropdown-item" href="/bibliotheken/tensorflow">TensorFlow</a>
+                        <a class="dropdown-item" href="/bibliotheken/flask">Flask</a>
+                        <a class="dropdown-item" href="/bibliotheken/django">Django</a>
+                        <a class="dropdown-item" href="/bibliotheken/beautifulsoup">BeautifulSoup</a>
+                        <a class="dropdown-item" href="/bibliotheken/requests">Requests</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/wiki">Wiki</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/quiz">Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4">Scikit-Learn</h1>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2>Einführung in Scikit-Learn</h2>
+        <p>Scikit-Learn ist eine einfache und effiziente Bibliothek für maschinelles Lernen in Python. Weitere Informationen finden Sie in der <a href="https://scikit-learn.org/stable/" target="_blank">Scikit-Learn-Dokumentation</a>.</p>
+
+        <h3>Beispiele für die Verwendung von Scikit-Learn</h3>
+        <p>Hier sind einige Beispiele für die Verwendung von Scikit-Learn in Python:</p>
+
+        <h4>Ein einfaches Klassifikationsmodell</h4>
+        <button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-1">
+            <button class="copy-button" onclick="copyToClipboard('code-block-1-code')">Code kopieren</button>
+            <pre><code id="code-block-1-code">from sklearn.datasets import load_iris
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+
+# Daten laden
+iris = load_iris()
+X = iris.data
+y = iris.target
+
+# Daten in Trainings- und Testset aufteilen
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Modell erstellen und trainieren
+clf = RandomForestClassifier(n_estimators=100)
+clf.fit(X_train, y_train)
+
+# Vorhersagen machen
+y_pred = clf.predict(X_test)
+
+# Genauigkeit ausgeben
+print(f"Genauigkeit: {accuracy_score(y_test, y_pred)}")
+            </code></pre>
+        </div>
+
+        <h4>Ein einfaches Regressionsmodell</h4>
+        <button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-2">
+            <button class="copy-button" onclick="copyToClipboard('code-block-2-code')">Code kopieren</button>
+            <pre><code id="code-block-2-code">from sklearn.datasets import load_boston
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+
+# Daten laden
+boston = load_boston()
+X = boston.data
+y = boston.target
+
+# Daten in Trainings- und Testset aufteilen
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
+
+# Modell erstellen und trainieren
+reg = LinearRegression()
+reg.fit(X_train, y_train)
+
+# Vorhersagen machen
+y_pred = reg.predict(X_test)
+
+# Mean Squared Error ausgeben
+print(f"Mean Squared Error: {mean_squared_error(y_test, y_pred)}")
+            </code></pre>
+        </div>
+
+        <h4>Clustering</h4>
+        <button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-3">
+            <button class="copy-button" onclick="copyToClipboard('code-block-3-code')">Code kopieren</button>
+            <pre><code id="code-block-3-code">from sklearn.datasets import make_blobs
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+
+# Daten generieren
+X, _ = make_blobs(n_samples=300, centers=4, random_state=42)
+
+# KMeans Modell erstellen und trainieren
+kmeans = KMeans(n_clusters=4)
+kmeans.fit(X)
+
+# Clusterzentren ausgeben
+print(f"Clusterzentren: {kmeans.cluster_centers_}")
+
+# Daten plotten
+plt.scatter(X[:, 0], X[:, 1], c=kmeans.labels_, cmap='viridis')
+plt.scatter(kmeans.cluster_centers_[:, 0], kmeans.cluster_centers_[:, 1], s=300, c='red')
+plt.title('KMeans Clustering')
+plt.show()
+            </code></pre>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
+                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
+            </ul>
+            <p>© 2024 Python Schulungsseite</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function toggleCode(id) {
+            var codeBlock = document.getElementById(id);
+            if (codeBlock.classList.contains('visible')) {
+                codeBlock.classList.remove('visible');
+            } else {
+                codeBlock.classList.add('visible');
+            }
+        }
+
+        function copyToClipboard(id) {
+            var copyText = document.getElementById(id + '-code').textContent;
+            var textArea = document.createElement("textarea");
+            textArea.value = copyText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            textArea.remove();
+            alert("Code kopiert!");
+        }
+    </script>
+</body>
+</html>

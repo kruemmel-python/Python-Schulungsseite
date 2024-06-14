@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Grafik-Bibliotheken</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            display: none;
+            position: relative;
+        }
+
+            .code-block.visible {
+                display: block;
+            }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Python Schulungsseite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Startseite</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownKonzepte" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Bibliotheken
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownKonzepte">
+                        <a class="dropdown-item" href="/bibliotheken">Bibliotheken Übersicht</a>
+                        <a class="dropdown-item" href="/bibliotheken/grafik">Grafik</a>
+                        <!-- Weitere Bibliotheken können hier hinzugefügt werden -->
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/wiki">Wiki</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/quiz">Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4">Python Grafik-Bibliotheken</h1>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2>Einführung in Grafik-Bibliotheken</h2>
+        <p>Python bietet verschiedene Bibliotheken für die Erstellung und Bearbeitung von Grafiken. Hier sind einige der beliebtesten und am häufigsten verwendeten Grafik-Bibliotheken in Python. Weitere Informationen finden Sie in der <a href="https://matplotlib.org/stable/contents.html" target="_blank">offiziellen Matplotlib-Dokumentation</a>.</p>
+
+        <h3>Beispiele für die Verwendung von Grafik-Bibliotheken</h3>
+        <p>Hier sind einige Beispiele für die Verwendung von Grafik-Bibliotheken in Python:</p>
+
+        <h4>Grafiken mit Matplotlib erstellen</h4>
+        <p>Matplotlib ist eine umfangreiche Bibliothek zur Erstellung von statischen, animierten und interaktiven Grafiken in Python.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-1">
+            <button class="copy-button" onclick="copyToClipboard('code-block-1-code')">Code kopieren</button>
+            <pre><code id="code-block-1-code"># Grafiken erstellen mit Matplotlib
+import matplotlib.pyplot as plt
+
+# Daten
+x = [1, 2, 3, 4, 5]
+y = [2, 3, 5, 7, 11]
+
+# Linie zeichnen
+plt.plot(x, y)
+
+# Achsenbeschriftungen
+plt.xlabel('X-Werte')
+plt.ylabel('Y-Werte')
+
+# Titel
+plt.title('Einfache Linie')
+
+# Grafik anzeigen
+plt.show()
+            </code></pre>
+        </div>
+
+        <h4>Grafiken mit Seaborn erstellen</h4>
+        <p>Seaborn ist eine Bibliothek zur Erstellung von informativen und attraktiven statistischen Grafiken.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-2">
+            <button class="copy-button" onclick="copyToClipboard('code-block-2-code')">Code kopieren</button>
+            <pre><code id="code-block-2-code"># Grafiken erstellen mit Seaborn
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Daten laden
+tips = sns.load_dataset("tips")
+
+# Histogramm zeichnen
+sns.histplot(tips, x="total_bill", hue="time", element="step", stat="density")
+
+# Grafik anzeigen
+plt.show()
+            </code></pre>
+        </div>
+
+        <h4>Interaktive Grafiken mit Plotly erstellen</h4>
+        <p>Plotly ist eine Bibliothek zur Erstellung von interaktiven Grafiken und Dashboards.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-3">
+            <button class="copy-button" onclick="copyToClipboard('code-block-3-code')">Code kopieren</button>
+            <pre><code id="code-block-3-code"># Interaktive Grafiken erstellen mit Plotly
+import plotly.express as px
+
+# Daten laden
+df = px.data.iris()
+
+# Streudiagramm zeichnen
+fig = px.scatter(df, x="sepal_width", y="sepal_length", color="species")
+
+# Grafik anzeigen
+fig.show()
+            </code></pre>
+        </div>
+
+        <h3>Zusammenfassung</h3>
+        <p>Python bietet eine Vielzahl von Bibliotheken für die Grafikerstellung, die die Arbeit mit Grafik-Dateien erleichtern. Weitere Informationen finden Sie in der <a href="https://matplotlib.org/stable/contents.html" target="_blank">offiziellen Matplotlib-Dokumentation</a>.</p>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
+                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
+            </ul>
+            <p>© 2024 Python Schulungsseite</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function toggleCode(id) {
+            var codeBlock = document.getElementById(id);
+            if (codeBlock.classList.contains('visible')) {
+                codeBlock.classList.remove('visible');
+            } else {
+                codeBlock.classList.add('visible');
+            }
+        }
+
+        function copyToClipboard(id) {
+            var copyText = document.getElementById(id + '-code').textContent;
+            var textArea = document.createElement("textarea");
+            textArea.value = copyText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            textArea.remove();
+            alert("Code kopiert!");
+        }
+    </script>
+</body>
+</html>

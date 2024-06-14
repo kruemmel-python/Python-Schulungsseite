@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            display: none;
+            position: relative;
+        }
+
+            .code-block.visible {
+                display: block;
+            }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Python Schulungsseite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Startseite</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBibliotheken" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Bibliotheken
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownBibliotheken">
+                        <a class="dropdown-item" href="/bibliotheken/numpy">NumPy</a>
+                        <a class="dropdown-item" href="/bibliotheken/pandas">Pandas</a>
+                        <a class="dropdown-item" href="/bibliotheken/matplotlib">Matplotlib</a>
+                        <a class="dropdown-item" href="/bibliotheken/scikit_learn">Scikit-Learn</a>
+                        <a class="dropdown-item" href="/bibliotheken/tensorflow">TensorFlow</a>
+                        <a class="dropdown-item" href="/bibliotheken/flask">Flask</a>
+                        <a class="dropdown-item" href="/bibliotheken/django">Django</a>
+                        <a class="dropdown-item" href="/bibliotheken/beautifulsoup">BeautifulSoup</a>
+                        <a class="dropdown-item" href="/bibliotheken/requests">Requests</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/wiki">Wiki</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/quiz">Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4">Flask</h1>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2>Einführung in Flask</h2>
+        <p>Flask ist ein leichtgewichtiges WSGI-Webanwendungsframework in Python. Weitere Informationen finden Sie in der <a href="https://flask.palletsprojects.com/en/2.0.x/" target="_blank">Flask-Dokumentation</a>.</p>
+
+        <h3>Beispiele für die Verwendung von Flask</h3>
+        <p>Hier sind einige Beispiele für die Verwendung von Flask in Python:</p>
+
+        <h4>Ein einfaches Flask-Webanwendung</h4>
+        <button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-1">
+            <button class="copy-button" onclick="copyToClipboard('code-block-1-code')">Code kopieren</button>
+            <pre><code id="code-block-1-code">from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def hello_world():
+    return 'Hello, World!'
+
+if __name__ == '__main__':
+    app.run()
+            </code></pre>
+        </div>
+
+        <h4>Routen und Templates</h4>
+        <button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-2">
+            <button class="copy-button" onclick="copyToClipboard('code-block-2-code')">Code kopieren</button>
+            <pre><code id="code-block-2-code">from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('home.html')
+
+if __name__ == '__main__':
+    app.run()
+
+# Datei: templates/home.html
+<!DOCTYPE html>
+<html>
+<head>
+            <title>Home</title>
+</head>
+<body>
+            <h1>Willkommen auf der Startseite!</h1>
+</body>
+</html>
+            </code></pre>
+        </div>
+
+        <h4>Formulare und Datenverarbeitung</h4>
+        <button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-3">
+            <button class="copy-button" onclick="copyToClipboard('code-block-3-code')">Code kopieren</button>
+            <pre><code id="code-block-3-code">from flask import Flask, request, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('form.html')
+
+@app.route('/submit', methods=['POST'])
+def submit():
+    name = request.form['name']
+    return f'Hallo, {name}!'
+
+if __name__ == '__main__':
+    app.run()
+
+# Datei: templates/form.html
+<!DOCTYPE html>
+<html>
+<head>
+            <title>Formular</title>
+</head>
+<body>
+            <form method="post" action="/submit">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <button type="submit">Absenden</button>
+    </form>
+</body>
+</html>
+            </code></pre>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
+                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
+            </ul>
+            <p>© 2024 Python Schulungsseite</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function toggleCode(id) {
+            var codeBlock = document.get

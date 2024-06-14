@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Listen</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            display: none;
+            position: relative;
+        }
+
+            .code-block.visible {
+                display: block;
+            }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Python Schulungsseite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Startseite</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Grundlagen
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/grundlagen">Grundlagen Übersicht</a>
+                        <a class="dropdown-item" href="/grundlagen/variablen">Variablen</a>
+                        <a class="dropdown-item" href="/grundlagen/listen">Listen</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/konzepte">Konzepte</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/wiki">Wiki</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/quiz">Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4">Python Listen</h1>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2>Einführung in Listen</h2>
+        <p>Listen sind eine grundlegende Datenstruktur in Python, die verwendet wird, um mehrere Elemente in einer geordneten Sequenz zu speichern. Listen können Elemente verschiedenen Typs enthalten und sind veränderbar, d.h. ihre Elemente können geändert, hinzugefügt oder entfernt werden.</p>
+        <p>Weitere Informationen zu Listen in Python finden Sie in der <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists" target="_blank">offiziellen Python-Dokumentation</a>.</p>
+
+        <h3>Erstellen von Listen</h3>
+        <p>Listen können einfach erstellt werden, indem man die Elemente in eckige Klammern [] schreibt, getrennt durch Kommas.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-1">
+            <button class="copy-button" onclick="copyToClipboard('code-block-1-code')">Code kopieren</button>
+            <pre><code id="code-block-1-code"># Eine Liste mit Ganzzahlen
+zahlen = [1, 2, 3, 4, 5]
+print(zahlen)
+
+# Eine Liste mit verschiedenen Datentypen
+gemischt = [1, "Apfel", 3.14, True]
+print(gemischt)
+            </code></pre>
+        </div>
+
+        <h3>Zugriff auf Listenelemente</h3>
+        <p>Auf Elemente einer Liste kann mit Hilfe von Indizes zugegriffen werden. Indizes beginnen bei 0.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-2">
+            <button class="copy-button" onclick="copyToClipboard('code-block-2-code')">Code kopieren</button>
+            <pre><code id="code-block-2-code"># Zugriff auf Listenelemente
+zahlen = [1, 2, 3, 4, 5]
+erstes_element = zahlen[0]
+letztes_element = zahlen[-1]
+print("Erstes Element:", erstes_element)
+print("Letztes Element:", letztes_element)
+            </code></pre>
+        </div>
+
+        <h3>Hinzufügen und Entfernen von Elementen</h3>
+        <p>Listen in Python sind veränderbar, d.h. man kann Elemente hinzufügen oder entfernen.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-3">
+            <button class="copy-button" onclick="copyToClipboard('code-block-3-code')">Code kopieren</button>
+            <pre><code id="code-block-3-code"># Hinzufügen eines Elements zur Liste
+zahlen = [1, 2, 3, 4, 5]
+zahlen.append(6)
+print(zahlen)
+
+# Entfernen eines Elements aus der Liste
+zahlen.remove(3)
+print(zahlen)
+            </code></pre>
+        </div>
+
+        <h3>Listen durchlaufen</h3>
+        <p>Man kann eine Liste mit Hilfe einer Schleife durchlaufen.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-4')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-4">
+            <button class="copy-button" onclick="copyToClipboard('code-block-4-code')">Code kopieren</button>
+            <pre><code id="code-block-4-code"># Durchlaufen einer Liste
+zahlen = [1, 2, 3, 4, 5]
+for zahl in zahlen:
+    print(zahl)
+            </code></pre>
+        </div>
+
+        <h3>Weitere Listenoperationen</h3>
+        <p>Es gibt viele nützliche Methoden und Funktionen, die man mit Listen verwenden kann. Hier sind einige der wichtigsten:</p>
+
+        <h4>Sortieren von Listen</h4>
+        <p>Mit der Methode <code>sort()</code> kann man eine Liste in aufsteigender Reihenfolge sortieren. Die Methode verändert die ursprüngliche Liste.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-5')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-5">
+            <button class="copy-button" onclick="copyToClipboard('code-block-5-code')">Code kopieren</button>
+            <pre><code id="code-block-5-code"># Sortieren einer Liste
+zahlen = [3, 1, 4, 1, 5, 9, 2, 6, 5]
+zahlen.sort()
+print("Sortierte Liste:", zahlen)
+            </code></pre>
+        </div>
+
+        <h4>Umkehren von Listen</h4>
+        <p>Mit der Methode <code>reverse()</code> kann man die Reihenfolge der Elemente in einer Liste umkehren.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-6')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-6">
+            <button class="copy-button" onclick="copyToClipboard('code-block-6-code')">Code kopieren</button>
+            <pre><code id="code-block-6-code"># Umkehren einer Liste
+zahlen = [3, 1, 4, 1, 5, 9, 2, 6, 5]
+zahlen.reverse()
+print("Umgekehrte Liste:", zahlen)
+            </code></pre>
+        </div>
+
+        <h4>Länge einer Liste</h4>
+        <p>Mit der Funktion <code>len()</code> kann man die Anzahl der Elemente in einer Liste bestimmen.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-7')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-7">
+            <button class="copy-button" onclick="copyToClipboard('code-block-7-code')">Code kopieren</button>
+            <pre><code id="code-block-7-code"># Länge einer Liste bestimmen
+zahlen = [3, 1, 4, 1, 5, 9, 2, 6, 5]
+laenge = len(zahlen)
+print("Länge der Liste:", laenge)
+            </code></pre>
+        </div>
+
+        <h4>Elemente zählen</h4>
+        <p>Mit der Methode <code>count()</code> kann man zählen, wie oft ein bestimmtes Element in einer Liste vorkommt.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-8')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-8">
+            <button class="copy-button" onclick="copyToClipboard('code-block-8-code')">Code kopieren</button>
+            <pre><code id="code-block-8-code"># Elemente in einer Liste zählen
+zahlen = [3, 1, 4, 1, 5, 9, 2, 6, 5]
+anzahl_der_einsen = zahlen.count(1)
+print("Anzahl der Einsen:", anzahl_der_einsen)
+            </code></pre>
+        </div>
+
+        <h4>Elemente einfügen</h4>
+        <p>Mit der Methode <code>insert()</code> kann man ein Element an einer bestimmten Position in einer Liste einfügen.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-9')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-9">
+            <button class="copy-button" onclick="copyToClipboard('code-block-9-code')">Code kopieren</button>
+            <pre><code id="code-block-9-code"># Einfügen eines Elements in eine Liste
+zahlen = [3, 1, 4, 1, 5, 9, 2, 6, 5]
+zahlen.insert(2, 7)  # Füge 7 an der Position 2 ein
+print("Liste nach Einfügen:", zahlen)
+            </code></pre>
+        </div>
+
+        <h4>Elemente entfernen</h4>
+        <p>Mit der Methode <code>pop()</code> kann man ein Element von einer bestimmten Position in der Liste entfernen und zurückgeben. Wenn keine Position angegeben wird, wird das letzte Element entfernt und zurückgegeben.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-10')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-10">
+            <button class="copy-button" onclick="copyToClipboard('code-block-10-code')">Code kopieren</button>
+            <pre><code id="code-block-10-code"># Entfernen eines Elements aus einer Liste
+zahlen = [3, 1, 4, 1, 5, 9, 2, 6, 5]
+entferntes_element = zahlen.pop(3)  # Entferne das Element an Position 3
+print("Entferntes Element:", entferntes_element)
+print("Liste nach Entfernen:", zahlen)
+            </code></pre>
+        </div>
+
+        <h4>Listen zusammenfügen</h4>
+        <p>Man kann zwei Listen mit dem <code>+</code>-Operator zusammenfügen.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-11')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-11">
+            <button class="copy-button" onclick="copyToClipboard('code-block-11-code')">Code kopieren</button>
+            <pre><code id="code-block-11-code"># Zusammenfügen von Listen
+liste1 = [1, 2, 3]
+liste2 = [4, 5, 6]
+zusammengefuegt = liste1 + liste2
+print("Zusammengefügte Liste:", zusammengefuegt)
+            </code></pre>
+        </div>
+
+        <h4>Liste kopieren</h4>
+        <p>Man kann eine Liste mit der Methode <code>copy()</code> kopieren.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-12')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-12">
+            <button class="copy-button" onclick="copyToClipboard('code-block-12-code')">Code kopieren</button>
+            <pre><code id="code-block-12-code"># Kopieren einer Liste
+zahlen = [3, 1, 4, 1, 5, 9, 2, 6, 5]
+kopie = zahlen.copy()
+print("Kopie der Liste:", kopie)
+            </code></pre>
+        </div>
+
+        <h4>Liste leeren</h4>
+        <p>Mit der Methode <code>clear()</code> kann man alle Elemente aus einer Liste entfernen.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-13')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-13">
+            <button class="copy-button" onclick="copyToClipboard('code-block-13-code')">Code kopieren</button>
+            <pre><code id="code-block-13-code"># Leeren einer Liste
+zahlen = [3, 1, 4, 1, 5, 9, 2, 6, 5]
+zahlen.clear()
+print("Geleerte Liste:", zahlen)
+            </code></pre>
+        </div>
+
+        <p>Weitere Informationen zu Listenmethoden finden Sie in der <a href="https://docs.python.org/3/tutorial/datastructures.html#more-on-lists" target="_blank">offiziellen Python-Dokumentation</a>.</p>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
+                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
+            </ul>
+            <p>© 2024 Python Schulungsseite</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function toggleCode(id) {
+            var codeBlock = document.getElementById(id);
+            if (codeBlock.classList.contains('visible')) {
+                codeBlock.classList.remove('visible');
+            } else {
+                codeBlock.classList.add('visible');
+            }
+        }
+
+        function copyToClipboard(id) {
+            var copyText = document.getElementById(id + '-code').textContent;
+            var textArea = document.createElement("textarea");
+            textArea.value = copyText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            textArea.remove();
+            alert("Code kopiert!");
+        }
+    </script>
+</body>
+</html>

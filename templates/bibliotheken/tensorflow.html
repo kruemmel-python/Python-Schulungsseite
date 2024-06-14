@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TensorFlow</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            display: none;
+            position: relative;
+        }
+
+            .code-block.visible {
+                display: block;
+            }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Python Schulungsseite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Startseite</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownBibliotheken" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Bibliotheken
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownBibliotheken">
+                        <a class="dropdown-item" href="/bibliotheken/numpy">NumPy</a>
+                        <a class="dropdown-item" href="/bibliotheken/pandas">Pandas</a>
+                        <a class="dropdown-item" href="/bibliotheken/matplotlib">Matplotlib</a>
+                        <a class="dropdown-item" href="/bibliotheken/scikit_learn">Scikit-Learn</a>
+                        <a class="dropdown-item" href="/bibliotheken/tensorflow">TensorFlow</a>
+                        <a class="dropdown-item" href="/bibliotheken/flask">Flask</a>
+                        <a class="dropdown-item" href="/bibliotheken/django">Django</a>
+                        <a class="dropdown-item" href="/bibliotheken/beautifulsoup">BeautifulSoup</a>
+                        <a class="dropdown-item" href="/bibliotheken/requests">Requests</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/wiki">Wiki</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/quiz">Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4">TensorFlow</h1>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2>Einführung in TensorFlow</h2>
+        <p>TensorFlow ist eine Open-Source-Plattform für maschinelles Lernen. Weitere Informationen finden Sie in der <a href="https://www.tensorflow.org/" target="_blank">TensorFlow-Dokumentation</a>.</p>
+
+        <h3>Beispiele für die Verwendung von TensorFlow</h3>
+        <p>Hier sind einige Beispiele für die Verwendung von TensorFlow in Python:</p>
+
+        <h4>Ein einfaches Neuronales Netzwerk</h4>
+        <button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-1">
+            <button class="copy-button" onclick="copyToClipboard('code-block-1-code')">Code kopieren</button>
+            <pre><code id="code-block-1-code">import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+
+# Modell erstellen
+model = Sequential([
+    Dense(64, activation='relu', input_shape=(784,)),
+    Dense(64, activation='relu'),
+    Dense(10, activation='softmax')
+])
+
+# Modell kompilieren
+model.compile(optimizer='adam', loss='sparse_categorical_crossentropy', metrics=['accuracy'])
+
+# Modell trainieren (Dummy-Daten verwendet)
+import numpy as np
+x_train = np.random.random((1000, 784))
+y_train = np.random.randint(10, size=(1000,))
+
+model.fit(x_train, y_train, epochs=10)
+            </code></pre>
+        </div>
+
+        <h4>Ein einfaches Regressionsmodell</h4>
+        <button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-2">
+            <button class="copy-button" onclick="copyToClipboard('code-block-2-code')">Code kopieren</button>
+            <pre><code id="code-block-2-code">import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense
+
+# Modell erstellen
+model = Sequential([
+    Dense(64, activation='relu', input_shape=(13,)),
+    Dense(64, activation='relu'),
+    Dense(1)
+])
+
+# Modell kompilieren
+model.compile(optimizer='adam', loss='mse')
+
+# Modell trainieren (Dummy-Daten verwendet)
+import numpy as np
+x_train = np.random.random((1000, 13))
+y_train = np.random.random((1000,))
+
+model.fit(x_train, y_train, epochs=10)
+            </code></pre>
+        </div>
+
+        <h4>Bildklassifikation</h4>
+        <button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-3">
+            <button class="copy-button" onclick="copyToClipboard('code-block-3-code')">Code kopieren</button>
+            <pre><code id="code-block-3-code">import tensorflow as tf
+from tensorflow.keras.applications import MobileNetV2
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input, decode_predictions
+import numpy as np
+
+# Modell laden
+model = MobileNetV2(weights='imagenet')
+
+# Bild vorverarbeiten
+img_path = 'elephant.jpg'
+img = image.load_img(img_path, target_size=(224, 224))
+x = image.img_to_array(img)
+x = np.expand_dims(x, axis=0)
+x = preprocess_input(x)
+
+# Vorhersage machen
+preds = model.predict(x)
+print('Predicted:', decode_predictions(preds, top=3)[0])
+            </code></pre>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
+                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
+            </ul>
+            <p>© 2024 Python Schulungsseite</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function toggleCode(id) {
+            var codeBlock = document.getElementById(id);
+            if (codeBlock.classList.contains('visible')) {
+                codeBlock.classList.remove('visible');
+            } else {
+                codeBlock.classList.add('visible');
+            }
+        }
+
+        function copyToClipboard(id) {
+            var copyText = document.getElementById(id + '-code').textContent;
+            var textArea = document.createElement("textarea");
+            textArea.value = copyText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            textArea.remove();
+            alert("Code kopiert!");
+        }
+    </script>
+</body>
+</html>

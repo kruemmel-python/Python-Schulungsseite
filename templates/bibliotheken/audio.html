@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Audio-Bibliotheken</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            display: none;
+            position: relative;
+        }
+
+            .code-block.visible {
+                display: block;
+            }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Python Schulungsseite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Startseite</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownKonzepte" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Bibliotheken
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownKonzepte">
+                        <a class="dropdown-item" href="/bibliotheken">Bibliotheken Übersicht</a>
+                        <a class="dropdown-item" href="/bibliotheken/audio">Audio</a>
+                        <!-- Weitere Bibliotheken können hier hinzugefügt werden -->
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/wiki">Wiki</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/quiz">Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4">Python Audio-Bibliotheken</h1>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2>Einführung in Audio-Bibliotheken</h2>
+        <p>Python bietet verschiedene Bibliotheken für die Audioverarbeitung. Hier sind einige der beliebtesten und am häufigsten verwendeten Audio-Bibliotheken in Python. Weitere Informationen finden Sie in der <a href="https://docs.python.org/3/library/audioop.html" target="_blank">offiziellen Python-Dokumentation</a>.</p>
+
+        <h3>Grundlagen der Audioverarbeitung</h3>
+        <p>Die Audioverarbeitung in Python kann mit verschiedenen Bibliotheken durchgeführt werden, darunter <code>pydub</code>, <code>librosa</code> und <code>wave</code>.</p>
+
+        <h3>Beispiele für die Verwendung von Audio-Bibliotheken</h3>
+        <p>Hier sind einige Beispiele für die Verwendung von Audio-Bibliotheken in Python:</p>
+
+        <h4>Audioverarbeitung mit Pydub</h4>
+        <p>Pydub ist eine einfache und benutzerfreundliche Bibliothek zur Bearbeitung von Audio-Dateien.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-1">
+            <button class="copy-button" onclick="copyToClipboard('code-block-1-code')">Code kopieren</button>
+            <pre><code id="code-block-1-code"># Audioverarbeitung mit Pydub
+from pydub import AudioSegment
+
+# Audio-Datei laden
+audio = AudioSegment.from_file("example.mp3")
+
+# Lautstärke um 6dB erhöhen
+louder_audio = audio + 6
+
+# Lautstärke um 3dB verringern
+quieter_audio = audio - 3
+
+# Audio-Datei exportieren
+louder_audio.export("louder_example.mp3", format="mp3")
+            </code></pre>
+        </div>
+
+        <h4>Audioanalyse mit Librosa</h4>
+        <p>Librosa ist eine Bibliothek für die Analyse von Musik und Audio.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-2">
+            <button class="copy-button" onclick="copyToClipboard('code-block-2-code')">Code kopieren</button>
+            <pre><code id="code-block-2-code"># Audioanalyse mit Librosa
+import librosa
+
+# Audio-Datei laden
+y, sr = librosa.load("example.wav")
+
+# Tempo und Beat-Frames extrahieren
+tempo, beat_frames = librosa.beat.beat_track(y=y, sr=sr)
+
+print(f"Tempo: {tempo} BPM")
+            </code></pre>
+        </div>
+
+        <h4>Arbeiten mit dem wave-Modul</h4>
+        <p>Das <code>wave</code>-Modul bietet eine einfache Schnittstelle zum Arbeiten mit WAV-Dateien.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-3">
+            <button class="copy-button" onclick="copyToClipboard('code-block-3-code')">Code kopieren</button>
+            <pre><code id="code-block-3-code"># Arbeiten mit dem wave-Modul
+import wave
+
+# WAV-Datei öffnen und lesen
+with wave.open("example.wav", "rb") as wav_file:
+    # Parameter der WAV-Datei auslesen
+    params = wav_file.getparams()
+    print(params)
+
+    # Audio-Daten auslesen
+    frames = wav_file.readframes(-1)
+
+# Schreiben der Audio-Daten in eine neue WAV-Datei
+with wave.open("new_example.wav", "wb") as new_wav_file:
+    new_wav_file.setparams(params)
+    new_wav_file.writeframes(frames)
+            </code></pre>
+        </div>
+
+        <h4>Audio mit Soundfile und Numpy laden</h4>
+        <p>Soundfile ist eine Bibliothek zum Lesen und Schreiben von Sound-Dateien, die mit Numpy arbeitet.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-4')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-4">
+            <button class="copy-button" onclick="copyToClipboard('code-block-4-code')">Code kopieren</button>
+            <pre><code id="code-block-4-code"># Audio mit Soundfile und Numpy laden
+import soundfile as sf
+import numpy as np
+
+# Audio-Datei lesen
+data, samplerate = sf.read('example.wav')
+
+# Audio-Daten mit Numpy verarbeiten
+print(f"Sample Rate: {samplerate}")
+print(f"Data Type: {type(data)}")
+print(f"Data Shape: {data.shape}")
+
+# Bearbeitete Audio-Daten speichern
+sf.write('new_example.wav', data, samplerate)
+            </code></pre>
+        </div>
+
+        <h4>Spracherkennung mit SpeechRecognition</h4>
+        <p>SpeechRecognition ist eine Bibliothek zur Durchführung von Spracherkennung mit verschiedenen Engines und APIs.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-5')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-5">
+            <button class="copy-button" onclick="copyToClipboard('code-block-5-code')">Code kopieren</button>
+            <pre><code id="code-block-5-code"># Spracherkennung mit SpeechRecognition
+import speech_recognition as sr
+
+# Initialisieren des Recognizer
+recognizer = sr.Recognizer()
+
+# Laden der Audio-Datei
+with sr.AudioFile('example.wav') as source:
+    audio_data = recognizer.record(source)
+    
+# Spracherkennung durchführen
+try:
+    text = recognizer.recognize_google(audio_data)
+    print(f"Erkannter Text: {text}")
+except sr.UnknownValueError:
+    print("Google Speech Recognition konnte den Text nicht verstehen")
+except sr.RequestError as e:
+    print(f"Konnte keine Verbindung zu Google herstellen; {e}")
+            </code></pre>
+        </div>
+
+        <h3>Zusammenfassung</h3>
+        <p>Python bietet eine Vielzahl von Bibliotheken für die Audioverarbeitung, die die Arbeit mit Audio-Dateien erleichtern. Weitere Informationen finden Sie in der <a href="https://docs.python.org/3/library/audioop.html" target="_blank">offiziellen Python-Dokumentation</a>.</p>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
+                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
+            </ul>
+            <p>© 2024 Python Schulungsseite</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function toggleCode(id) {
+            var codeBlock = document.getElementById(id);
+            if (codeBlock.classList.contains('visible')) {
+                codeBlock.classList.remove('visible');
+            } else {
+                codeBlock.classList.add('visible');
+            }
+        }
+
+        function copyToClipboard(id) {
+            var copyText = document.getElementById(id + '-code').textContent;
+            var textArea = document.createElement("textarea");
+            textArea.value = copyText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            textArea.remove();
+            alert("Code kopiert!");
+        }
+    </script>
+</body>
+</html>

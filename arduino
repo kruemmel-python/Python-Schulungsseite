@@ -1,0 +1,71 @@
+﻿D:\repos\FlaskWebProject_raumflaeche\FlaskWebProject_raumflaeche\
+│
+├── static\
+│   ├── css\
+│   │   └── styles.css
+│   ├── images\
+│   │   ├── grundlagen.jpg
+│   │   ├── konzepte.jpg
+│   │   ├── logo.jpg
+│   │   └── wiki.jpg
+│   └── js\
+│       └── script.js
+│
+└── templates\
+    ├── grundlagen\
+    │   ├── variablen.html
+    │   ├── listen.html
+    │   ├── dictionaries.html
+    │   ├── tupel.html
+    │   ├── datentypen.html
+    │   ├── funktionen.html
+    │   ├── kontrollstrukturen.html
+    │   └── klassen.html
+    │
+    ├── konzepte\
+    │   ├── dateioperationen.html
+    │   ├── ausnahmebehandlung.html
+    │   ├── module_pakete.html
+    │   ├── listenverstaendnis.html
+    │   ├── generatoren_iteratoren.html
+    │   ├── dekoratoren.html
+    │   ├── kontextmanager.html
+    │   ├── multithreading_multiprocessing.html
+    │   ├── asynchrone_programmierung.html
+    │   ├── unit_testing.html
+    │   ├── mocking.html
+    │   ├── design_patterns.html
+    │   ├── datenbankzugriffe.html
+    │   ├── web_scraping.html
+    │   ├── regular_expressions.html
+    │   ├── erweiterte_funktionen.html
+    │   └── metaprogrammierung.html
+    │
+    ├── bibliotheken\
+    │   ├── numpy.html
+    │   ├── pandas.html
+    │   ├── matplotlib.html
+    │   ├── scikit_learn.html
+    │   ├── tensorflow.html
+    │   ├── keras.html
+    │   ├── flask.html
+    │   ├── django.html
+    │   ├── requests.html
+    │   ├── beautifulsoup.html
+    │   ├── audio.html
+    │   ├── musik.html
+    │   ├── video.html
+    │   ├── foto.html
+    │   ├── bilder.html
+    │   ├── grafik.html
+    │   ├── beruf.html
+    │   └── hobbys.html
+    │
+    ├── bibliotheken.html
+    ├── grundlagen.html
+    ├── konzepte.html
+    ├── index.html
+    ├── result.html
+    ├── videos.html
+    ├── quiz.html
+    └── wiki.html

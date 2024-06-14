@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Kontextmanager</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <style>
+        .code-block {
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            display: none;
+            position: relative;
+        }
+
+            .code-block.visible {
+                display: block;
+            }
+
+        .copy-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Python Schulungsseite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Startseite</a>
+                </li>
+                <li class="nav-item dropdown active">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownKonzepte" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Konzepte
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownKonzepte">
+                        <a class="dropdown-item" href="/konzepte">Konzepte Übersicht</a>
+                        <a class="dropdown-item" href="/konzepte/dateioperationen">Dateioperationen</a>
+                        <a class="dropdown-item" href="/konzepte/ausnahmebehandlung">Ausnahmebehandlung</a>
+                        <a class="dropdown-item" href="/konzepte/module_pakete">Module und Pakete</a>
+                        <a class="dropdown-item" href="/konzepte/listenverstaendnis">Listenverständnis</a>
+                        <a class="dropdown-item" href="/konzepte/generatoren_iteratoren">Generatoren und Iteratoren</a>
+                        <a class="dropdown-item" href="/konzepte/dekoratoren">Dekoratoren</a>
+                        <a class="dropdown-item" href="/konzepte/kontextmanager">Kontextmanager</a>
+                        <!-- Weitere Konzepte können hier hinzugefügt werden -->
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/wiki">Wiki</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/quiz">Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4">Python Kontextmanager</h1>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2>Einführung in Kontextmanager</h2>
+        <p>Kontextmanager sind eine praktische Möglichkeit in Python, Ressourcen wie Dateien oder Netzwerkverbindungen sicher und effizient zu verwalten. Weitere Informationen zu Kontextmanagern in Python finden Sie in der <a href="https://docs.python.org/3/library/contextlib.html" target="_blank">offiziellen Python-Dokumentation</a>.</p>
+
+        <h3>Grundlagen von Kontextmanagern</h3>
+        <p>Kontextmanager werden verwendet, um sicherzustellen, dass Ressourcen korrekt freigegeben werden, wenn sie nicht mehr benötigt werden. Dies geschieht in der Regel mit der <code>with</code>-Anweisung, die sicherstellt, dass der Kontextmanager korrekt betreten und verlassen wird.</p>
+
+        <h3>Beispiele für Kontextmanager</h3>
+        <p>Hier sind einige Beispiele für die Verwendung von Kontextmanagern in Python:</p>
+
+        <h4>Verwendung eines eingebauten Kontextmanagers</h4>
+        <p>Das Öffnen und Schreiben in eine Datei mit der <code>with</code>-Anweisung, die sicherstellt, dass die Datei korrekt geschlossen wird.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-1">
+            <button class="copy-button" onclick="copyToClipboard('code-block-1-code')">Code kopieren</button>
+            <pre><code id="code-block-1-code"># Verwendung eines eingebauten Kontextmanagers
+with open('example.txt', 'w') as file:
+    file.write('Hallo Welt')
+            </code></pre>
+        </div>
+
+        <h4>Erstellen eines eigenen Kontextmanagers</h4>
+        <p>Ein benutzerdefinierter Kontextmanager, der die Methoden <code>__enter__</code> und <code>__exit__</code> implementiert.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-2">
+            <button class="copy-button" onclick="copyToClipboard('code-block-2-code')">Code kopieren</button>
+            <pre><code id="code-block-2-code"># Erstellen eines eigenen Kontextmanagers
+class MeinKontext:
+    def __enter__(self):
+        print('Betrete den Kontext')
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print('Verlasse den Kontext')
+
+with MeinKontext() as mk:
+    print('Im Kontextblock')
+            </code></pre>
+        </div>
+
+        <h4>Verwendung des contextlib-Moduls</h4>
+        <p>Das <code>contextlib</code>-Modul bietet eine einfache Möglichkeit, Kontextmanager zu erstellen.</p>
+        <button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
+        <div class="code-block" id="code-block-3">
+            <button class="copy-button" onclick="copyToClipboard('code-block-3-code')">Code kopieren</button>
+            <pre><code id="code-block-3-code"># Verwendung des contextlib-Moduls
+from contextlib import contextmanager
+
+@contextmanager
+def mein_kontextmanager():
+    print('Betrete den Kontext')
+    yield
+    print('Verlasse den Kontext')
+
+with mein_kontextmanager():
+    print('Im Kontextblock')
+            </code></pre>
+        </div>
+
+        <h3>Zusammenfassung</h3>
+        <p>Kontextmanager sind eine nützliche Möglichkeit, Ressourcen sicher zu verwalten und sicherzustellen, dass sie korrekt freigegeben werden. Weitere Informationen zu Kontextmanagern finden Sie in der <a href="https://docs.python.org/3/library/contextlib.html" target="_blank">offiziellen Python-Dokumentation</a>.</p>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
+                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
+            </ul>
+            <p>© 2024 Python Schulungsseite</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function toggleCode(id) {
+            var codeBlock = document.getElementById(id);
+            if (codeBlock.classList.contains('visible')) {
+                codeBlock.classList.remove('visible');
+            } else {
+                codeBlock.classList.add('visible');
+            }
+        }
+
+        function copyToClipboard(id) {
+            var copyText = document.getElementById(id + '-code').textContent;
+            var textArea = document.createElement("textarea");
+            textArea.value = copyText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand("Copy");
+            textArea.remove();
+            alert("Code kopiert!");
+        }
+    </script>
+</body>
+</html>

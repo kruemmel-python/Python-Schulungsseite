@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Bibliotheken</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">Python Schulungsseite</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Startseite</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/grundlagen">Grundlagen</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/konzepte">Konzepte</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/wiki">Wiki</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="/bibliotheken">Bibliotheken</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/videos">Videos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/quiz">Quiz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="jumbotron text-center">
+        <div class="container">
+            <h1 class="display-4">Python Bibliotheken</h1>
+        </div>
+    </header>
+
+    <section class="container my-5">
+        <h2>Übersicht der Bibliotheken</h2>
+        <p>Hier finden Sie die wichtigsten und am häufigsten verwendeten Bibliotheken in Python.</p>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">NumPy</h5>
+                        <p class="card-text">Eine Bibliothek für wissenschaftliches Rechnen mit Unterstützung für große, mehrdimensionale Arrays und Matrizen.</p>
+                        <a href="/bibliotheken/numpy" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Pandas</h5>
+                        <p class="card-text">Eine leistungsstarke Datenanalyse- und Datenverarbeitungsbibliothek.</p>
+                        <a href="/bibliotheken/pandas" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Matplotlib</h5>
+                        <p class="card-text">Eine Bibliothek zur Erstellung statischer, animierter und interaktiver Visualisierungen in Python.</p>
+                        <a href="/bibliotheken/matplotlib" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Scikit-Learn</h5>
+                        <p class="card-text">Eine Bibliothek für maschinelles Lernen, die einfache und effiziente Tools für Datenanalyse und -mining bietet.</p>
+                        <a href="/bibliotheken/scikit-learn" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">TensorFlow</h5>
+                        <p class="card-text">Eine Open-Source-Bibliothek für maschinelles Lernen und künstliche Intelligenz.</p>
+                        <a href="/bibliotheken/tensorflow" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Keras</h5>
+                        <p class="card-text">Eine benutzerfreundliche API für das Erstellen und Trainieren von Deep-Learning-Modellen.</p>
+                        <a href="/bibliotheken/keras" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Flask</h5>
+                        <p class="card-text">Ein leichtgewichtiges Web-Framework für Python.</p>
+                        <a href="/bibliotheken/flask" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Django</h5>
+                        <p class="card-text">Ein hochgradig leistungsfähiges Web-Framework für Python, das die Entwicklung von Webanwendungen erleichtert.</p>
+                        <a href="/bibliotheken/django" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Requests</h5>
+                        <p class="card-text">Eine einfache, aber leistungsstarke Bibliothek für HTTP-Anfragen in Python.</p>
+                        <a href="/bibliotheken/requests" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">BeautifulSoup</h5>
+                        <p class="card-text">Eine Bibliothek zum Parsen von HTML und XML.</p>
+                        <a href="/bibliotheken/beautifulsoup" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Audio</h5>
+                        <p class="card-text">Bibliotheken für die Arbeit mit Audio.</p>
+                        <a href="/bibliotheken/audio" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Musik</h5>
+                        <p class="card-text">Bibliotheken für die Arbeit mit Musik.</p>
+                        <a href="/bibliotheken/musik" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Video</h5>
+                        <p class="card-text">Bibliotheken für die Arbeit mit Video.</p>
+                        <a href="/bibliotheken/video" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Foto</h5>
+                        <p class="card-text">Bibliotheken für die Arbeit mit Fotos.</p>
+                        <a href="/bibliotheken/foto" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Bilder</h5>
+                        <p class="card-text">Bibliotheken für die Arbeit mit Bildern.</p>
+                        <a href="/bibliotheken/bilder" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Grafik</h5>
+                        <p class="card-text">Bibliotheken für die Arbeit mit Grafik.</p>
+                        <a href="/bibliotheken/grafik" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Beruf</h5>
+                        <p class="card-text">Bibliotheken für berufliche Anwendungen.</p>
+                        <a href="/bibliotheken/beruf" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Hobbys</h5>
+                        <p class="card-text">Bibliotheken für Hobbys.</p>
+                        <a href="/bibliotheken/hobbys" class="btn btn-primary">Mehr erfahren</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
+                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
+            </ul>
+            <p>© 2024 Python Schulungsseite</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
