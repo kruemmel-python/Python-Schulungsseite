@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Ausnahmebehandlung</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Python Ausnahmebehandlung</title>
+<link href="/static/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet"/>
+<style>
         .code-block {
             background-color: #f4f4f4;
             border: 1px solid #ccc;
@@ -35,76 +36,68 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Python Schulungsseite</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Startseite</a>
-                </li>
-                <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownKonzepte" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<a class="navbar-brand" href="/">Python Schulungsseite</a>
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="/">Startseite</a>
+</li>
+<li class="nav-item dropdown active">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdownKonzepte" role="button">
                         Konzepte
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownKonzepte">
-                        <a class="dropdown-item" href="/konzepte">Konzepte Übersicht</a>
-                        <a class="dropdown-item" href="/konzepte/dateioperationen">Dateioperationen</a>
-                        <a class="dropdown-item" href="/konzepte/ausnahmebehandlung">Ausnahmebehandlung</a>
-                        <!-- Weitere Konzepte können hier hinzugefügt werden -->
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/wiki">Wiki</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/videos">Videos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/quiz">Quiz</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <header class="jumbotron text-center">
-        <div class="container">
-            <h1 class="display-4">Python Ausnahmebehandlung</h1>
-        </div>
-    </header>
-
-    <section class="container my-5">
-        <h2>Einführung in die Ausnahmebehandlung</h2>
-        <p>Die Ausnahmebehandlung ist ein wichtiges Konzept in der Programmierung, das es ermöglicht, auf Fehler und außergewöhnliche Situationen im Programm zu reagieren. Weitere Informationen zur Ausnahmebehandlung in Python finden Sie in der <a href="https://docs.python.org/3/tutorial/errors.html" target="_blank">offiziellen Python-Dokumentation</a>.</p>
-
-        <h3>Grundlagen der Ausnahmebehandlung</h3>
-        <p>In Python wird die Ausnahmebehandlung mit den Schlüsselwörtern <code>try</code>, <code>except</code> und <code>finally</code> durchgeführt.</p>
-
-        <h3>Beispiele für Ausnahmebehandlung</h3>
-        <p>Hier sind einige Beispiele für die Verwendung von Ausnahmebehandlung in Python:</p>
-
-        <h4>Einfacher try-except-Block</h4>
-        <p>Ein einfacher <code>try</code>-<code>except</code>-Block kann verwendet werden, um auf spezifische Fehler zu reagieren.</p>
-        <button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
-        <div class="code-block" id="code-block-1">
-            <button class="copy-button" onclick="copyToClipboard('code-block-1-code')">Code kopieren</button>
-            <pre><code id="code-block-1-code"># Einfacher try-except-Block
+<div aria-labelledby="navbarDropdownKonzepte" class="dropdown-menu">
+<a class="dropdown-item" href="/konzepte">Konzepte Übersicht</a>
+<a class="dropdown-item" href="/konzepte/dateioperationen">Dateioperationen</a>
+<a class="dropdown-item" href="/konzepte/ausnahmebehandlung">Ausnahmebehandlung</a>
+<!-- Weitere Konzepte können hier hinzugefügt werden -->
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/wiki">Wiki</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/videos">Videos</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/quiz">Quiz</a>
+</li>
+</ul>
+</div>
+</nav>
+<header class="jumbotron text-center">
+<div class="container">
+<h1 class="display-4">Python Ausnahmebehandlung</h1>
+</div>
+</header>
+<section class="container my-5">
+<h2>Einführung in die Ausnahmebehandlung</h2>
+<p>Die Ausnahmebehandlung ist ein wichtiges Konzept in der Programmierung, das es ermöglicht, auf Fehler und außergewöhnliche Situationen im Programm zu reagieren. Weitere Informationen zur Ausnahmebehandlung in Python finden Sie in der <a href="https://docs.python.org/3/tutorial/errors.html" target="_blank">offiziellen Python-Dokumentation</a>.</p>
+<h3>Grundlagen der Ausnahmebehandlung</h3>
+<p>In Python wird die Ausnahmebehandlung mit den Schlüsselwörtern <code>try</code>, <code>except</code> und <code>finally</code> durchgeführt.</p>
+<h3>Beispiele für Ausnahmebehandlung</h3>
+<p>Hier sind einige Beispiele für die Verwendung von Ausnahmebehandlung in Python:</p>
+<h4>Einfacher try-except-Block</h4>
+<p>Ein einfacher <code>try</code>-<code>except</code>-Block kann verwendet werden, um auf spezifische Fehler zu reagieren.</p>
+<button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
+<div class="code-block" id="code-block-1"><button class="copy-button" onclick="copyToClipboard('code-block-1-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<pre><code id="code-block-1-code"># Einfacher try-except-Block
 try:
     zahl = int(input("Geben Sie eine Zahl ein: "))
     print(f"Die eingegebene Zahl ist {zahl}")
 except ValueError:
     print("Das ist keine gültige Zahl!")
             </code></pre>
-        </div>
-
-        <h4>Mehrere Ausnahmen behandeln</h4>
-        <p>Sie können mehrere <code>except</code>-Blöcke verwenden, um verschiedene Arten von Ausnahmen zu behandeln.</p>
-        <button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
-        <div class="code-block" id="code-block-2">
-            <button class="copy-button" onclick="copyToClipboard('code-block-2-code')">Code kopieren</button>
-            <pre><code id="code-block-2-code"># Mehrere Ausnahmen behandeln
+</div>
+<h4>Mehrere Ausnahmen behandeln</h4>
+<p>Sie können mehrere <code>except</code>-Blöcke verwenden, um verschiedene Arten von Ausnahmen zu behandeln.</p>
+<button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
+<div class="code-block" id="code-block-2"><button class="copy-button" onclick="copyToClipboard('code-block-2-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<pre><code id="code-block-2-code"># Mehrere Ausnahmen behandeln
 try:
     zahl = int(input("Geben Sie eine Zahl ein: "))
     ergebnis = 10 / zahl
@@ -114,14 +107,12 @@ except ValueError:
 except ZeroDivisionError:
     print("Division durch Null ist nicht erlaubt!")
             </code></pre>
-        </div>
-
-        <h4>finally-Block</h4>
-        <p>Der <code>finally</code>-Block wird immer ausgeführt, unabhängig davon, ob eine Ausnahme aufgetreten ist oder nicht.</p>
-        <button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
-        <div class="code-block" id="code-block-3">
-            <button class="copy-button" onclick="copyToClipboard('code-block-3-code')">Code kopieren</button>
-            <pre><code id="code-block-3-code"># finally-Block
+</div>
+<h4>finally-Block</h4>
+<p>Der <code>finally</code>-Block wird immer ausgeführt, unabhängig davon, ob eine Ausnahme aufgetreten ist oder nicht.</p>
+<button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
+<div class="code-block" id="code-block-3"><button class="copy-button" onclick="copyToClipboard('code-block-3-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<pre><code id="code-block-3-code"># finally-Block
 try:
     file = open("example.txt", "r")
     content = file.read()
@@ -130,19 +121,17 @@ except FileNotFoundError:
 finally:
     file.close()
             </code></pre>
-        </div>
-
-        <h3>Eigene Ausnahmen definieren</h3>
-        <p>Sie können eigene Ausnahmen definieren, indem Sie eine neue Ausnahmeklasse erstellen, die von der eingebauten <code>Exception</code>-Klasse erbt.</p>
-        <button class="btn btn-link" onclick="toggleCode('code-block-4')">Beispielcode anzeigen</button>
-        <div class="code-block" id="code-block-4">
-            <button class="copy-button" onclick="copyToClipboard('code-block-4-code')">Code kopieren</button>
-            <pre><code id="code-block-4-code"># Eigene Ausnahme definieren
+</div>
+<h3>Eigene Ausnahmen definieren</h3>
+<p>Sie können eigene Ausnahmen definieren, indem Sie eine neue Ausnahmeklasse erstellen, die von der eingebauten <code>Exception</code>-Klasse erbt.</p>
+<button class="btn btn-link" onclick="toggleCode('code-block-4')">Beispielcode anzeigen</button>
+<div class="code-block" id="code-block-4"><button class="copy-button" onclick="copyToClipboard('code-block-4-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<pre><code id="code-block-4-code"># Eigene Ausnahme definieren
 class EigeneAusnahme(Exception):
     pass
 
 def check_value(x):
-    if x < 0:
+    if x &lt; 0:
         raise EigeneAusnahme("Der Wert darf nicht negativ sein!")
     return x
 
@@ -151,27 +140,24 @@ try:
 except EigeneAusnahme as e:
     print(e)
             </code></pre>
-        </div>
-
-        <h3>Zusammenfassung</h3>
-        <p>Die Ausnahmebehandlung in Python ermöglicht es Ihnen, robuste und fehlertolerante Programme zu schreiben. Weitere Informationen zur Ausnahmebehandlung finden Sie in der <a href="https://docs.python.org/3/tutorial/errors.html" target="_blank">offiziellen Python-Dokumentation</a>.</p>
-    </section>
-
-    <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
-                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
-            </ul>
-            <p>© 2024 Python Schulungsseite</p>
-        </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
+</div>
+<h3>Zusammenfassung</h3>
+<p>Die Ausnahmebehandlung in Python ermöglicht es Ihnen, robuste und fehlertolerante Programme zu schreiben. Weitere Informationen zur Ausnahmebehandlung finden Sie in der <a href="https://docs.python.org/3/tutorial/errors.html" target="_blank">offiziellen Python-Dokumentation</a>.</p>
+</section>
+<footer class="bg-dark text-white text-center py-4">
+<div class="container">
+<img alt="Logo" class="mb-2" src="{{ url_for('static', filename='images/logo.jpg') }}" style="height: 50px;"/>
+<ul class="list-inline">
+<li class="list-inline-item"><a class="text-white" href="/impressum">Impressum</a></li>
+<li class="list-inline-item"><a class="text-white" href="/datenschutz">Datenschutz</a></li>
+</ul>
+<p>© 2024 Python Schulungsseite</p>
+</div>
+</footer>
+<script src="/static/js/jquery-3.5.1.slim.min.js"></script>
+<script src="/static/js/popper.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script>
         function toggleCode(id) {
             var codeBlock = document.getElementById(id);
             if (codeBlock.classList.contains('visible')) {

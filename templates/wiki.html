@@ -1,59 +1,56 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Wiki</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Python Wiki</title>
+<link href="/static/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet"/>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Python Schulungsseite</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Startseite</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/grundlagen">Grundlagen</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/konzepte">Konzepte</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/wiki">Wiki</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/videos">Videos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/quiz">Quiz</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <header class="jumbotron text-center">
-        <div class="container">
-            <h1 class="display-4">Python Wiki</h1>
-            <p class="lead">Ein umfassendes Nachschlagewerk für alle Python-bezogenen Fragen.</p>
-        </div>
-    </header>
-
-    <section class="container my-5">
-        <h2>Einführung in Python</h2>
-        <p>Python ist eine vielseitige, interpretierte Programmiersprache, die in den späten 1980er Jahren von Guido van Rossum entwickelt wurde und 1991 erstmals veröffentlicht wurde. Sie zeichnet sich durch ihre einfache Syntax und Lesbarkeit aus, was sie zu einer der beliebtesten Programmiersprachen der Welt macht.</p>
-
-        <h3>Geschichte von Python</h3>
-        <p>Python wurde von Guido van Rossum während seiner Arbeit am Centrum Wiskunde & Informatica (CWI) in den Niederlanden entwickelt. Die Sprache wurde nach der britischen Comedy-Gruppe Monty Python benannt, weil van Rossum ein großer Fan der Show war. Python wurde entworfen, um eine einfach zu lesende und benutzerfreundliche Sprache zu sein, die dennoch mächtig genug ist, um komplexe Aufgaben zu bewältigen.</p>
-
-        <h3>Zen of Python</h3>
-        <p>Der Zen of Python, geschrieben von Tim Peters, ist eine Sammlung von 19 Prinzipien, die die Philosophie hinter dem Design von Python beschreiben. Diese Prinzipien sind in die Python-Interpreter eingebaut und können durch Eingabe von <code>import this</code> angezeigt werden.</p>
-        <pre><code>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<a class="navbar-brand" href="/">Python Schulungsseite</a>
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="/">Startseite</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/grundlagen">Grundlagen</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/konzepte">Konzepte</a>
+</li>
+<li class="nav-item active">
+<a class="nav-link" href="/wiki">Wiki</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/videos">Videos</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/quiz">Quiz</a>
+</li>
+</ul>
+</div>
+</nav>
+<header class="jumbotron text-center">
+<div class="container">
+<h1 class="display-4">Python Wiki</h1>
+<p class="lead">Ein umfassendes Nachschlagewerk für alle Python-bezogenen Fragen.</p>
+</div>
+</header>
+<section class="container my-5">
+<h2>Einführung in Python</h2>
+<p>Python ist eine vielseitige, interpretierte Programmiersprache, die in den späten 1980er Jahren von Guido van Rossum entwickelt wurde und 1991 erstmals veröffentlicht wurde. Sie zeichnet sich durch ihre einfache Syntax und Lesbarkeit aus, was sie zu einer der beliebtesten Programmiersprachen der Welt macht.</p>
+<h3>Geschichte von Python</h3>
+<p>Python wurde von Guido van Rossum während seiner Arbeit am Centrum Wiskunde &amp; Informatica (CWI) in den Niederlanden entwickelt. Die Sprache wurde nach der britischen Comedy-Gruppe Monty Python benannt, weil van Rossum ein großer Fan der Show war. Python wurde entworfen, um eine einfach zu lesende und benutzerfreundliche Sprache zu sein, die dennoch mächtig genug ist, um komplexe Aufgaben zu bewältigen.</p>
+<h3>Zen of Python</h3>
+<p>Der Zen of Python, geschrieben von Tim Peters, ist eine Sammlung von 19 Prinzipien, die die Philosophie hinter dem Design von Python beschreiben. Diese Prinzipien sind in die Python-Interpreter eingebaut und können durch Eingabe von <code>import this</code> angezeigt werden.</p>
+<pre><code>
 The Zen of Python, by Tim Peters
 
 Beautiful is better than ugly.
@@ -76,460 +73,488 @@ If the implementation is hard to explain, it's a bad idea.
 If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
         </code></pre>
+<h3>Merkmale von Python</h3>
+<ul>
+<li><strong>Einfach zu lernen und zu verwenden:</strong> Python hat eine klare und einfache Syntax, die es Anfängern leicht macht, die Grundlagen zu erlernen.</li>
+<li><strong>Interpretiert:</strong> Python ist eine interpretierte Sprache, was bedeutet, dass der Code Zeile für Zeile ausgeführt wird, was das Debuggen erleichtert.</li>
+<li><strong>Plattformunabhängig:</strong> Python läuft auf vielen Betriebssystemen, einschließlich Windows, MacOS und Linux.</li>
+<li><strong>Umfangreiche Standardbibliothek:</strong> Python kommt mit einer großen Standardbibliothek, die viele Funktionen und Module für verschiedene Aufgaben bietet.</li>
+<li><strong>Gemeinschaft und Unterstützung:</strong> Python hat eine große und aktive Gemeinschaft, die reichlich Dokumentation, Tutorials und Foren bietet.</li>
+</ul>
+<h3>Warum ist Python so beliebt?</h3>
+<p>Python ist aufgrund seiner Vielseitigkeit und Benutzerfreundlichkeit bei Entwicklern aller Erfahrungsstufen beliebt. Es wird in vielen Bereichen eingesetzt, darunter Webentwicklung, Datenanalyse, künstliche Intelligenz, wissenschaftliche Berechnungen und vieles mehr. Hier sind einige Gründe für seine Beliebtheit:</p>
+<ul>
+<li><strong>Lesbarkeit:</strong> Die Syntax von Python ist klar und leicht lesbar, was die Wartung und Weiterentwicklung von Code erleichtert.</li>
+<li><strong>Vielseitigkeit:</strong> Python kann für eine Vielzahl von Anwendungen verwendet werden, von einfachen Skripten bis hin zu komplexen maschinellen Lernalgorithmen.</li>
+<li><strong>Gemeinschaft:</strong> Eine große Gemeinschaft bedeutet reichlich Unterstützung, zahlreiche Bibliotheken und Frameworks sowie viele Ressourcen zum Lernen.</li>
+<li><strong>Bibliotheken und Frameworks:</strong> Python bietet eine Vielzahl von Bibliotheken und Frameworks, die die Entwicklung beschleunigen und erleichtern, wie Django für Webentwicklung und TensorFlow für maschinelles Lernen.</li>
+</ul>
+<h3>Einsatzbereiche von Python</h3>
+<p>Python ist in vielen Bereichen der Softwareentwicklung weit verbreitet. Hier sind einige der wichtigsten Einsatzbereiche:</p>
+<ul>
+<li><strong>Webentwicklung:</strong> Frameworks wie Django und Flask erleichtern die Entwicklung von Webanwendungen.</li>
+<li><strong>Datenanalyse:</strong> Bibliotheken wie Pandas, NumPy und Matplotlib machen Python zur bevorzugten Wahl für Datenwissenschaftler.</li>
+<li><strong>Künstliche Intelligenz und maschinelles Lernen:</strong> Bibliotheken wie TensorFlow, Keras und Scikit-learn unterstützen die Entwicklung komplexer Algorithmen.</li>
+<li><strong>Wissenschaftliche Berechnungen:</strong> Python wird in wissenschaftlichen Disziplinen häufig für die Analyse großer Datenmengen verwendet.</li>
+<li><strong>Skripterstellung und Automatisierung:</strong> Python eignet sich hervorragend für die Automatisierung sich wiederholender Aufgaben und das Schreiben von Skripten.</li>
+<li><strong>Spieleentwicklung:</strong> Bibliotheken wie Pygame ermöglichen die Entwicklung von Spielen.</li>
+<li><strong>Netzwerkprogrammierung:</strong> Python bietet zahlreiche Module für die Netzwerkprogrammierung und das Schreiben von Netzwerkdiensten.</li>
+</ul>
+<section class="container my-5">
+<h2>Übersicht der Grundlagen</h2>
+<p>Hier finden Sie die wichtigsten Themen der Python-Grundlagen.</p>
+<div class="row">
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Variablen</h5>
+<p class="card-text">Erfahren Sie, wie Sie in Python Variablen verwenden und manipulieren können.</p>
+<a class="btn btn-primary" href="/grundlagen/variablen">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Listen</h5>
+<p class="card-text">Lernen Sie, wie Sie Listen in Python erstellen und verwenden können.</p>
+<a class="btn btn-primary" href="/grundlagen/listen">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Dictionaries</h5>
+<p class="card-text">Entdecken Sie, wie Sie Dictionaries in Python nutzen können.</p>
+<a class="btn btn-primary" href="/grundlagen/dictionaries">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Tupel</h5>
+<p class="card-text">Erfahren Sie mehr über Tupel und ihre Verwendung in Python.</p>
+<a class="btn btn-primary" href="/grundlagen/tupel">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Datentypen</h5>
+<p class="card-text">Lernen Sie die verschiedenen Datentypen in Python kennen.</p>
+<a class="btn btn-primary" href="/grundlagen/datentypen">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Funktionen</h5>
+<p class="card-text">Verstehen Sie, wie Sie Funktionen in Python definieren und verwenden können.</p>
+<a class="btn btn-primary" href="/grundlagen/funktionen">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Kontrollstrukturen</h5>
+<p class="card-text">Erfahren Sie, wie Sie Kontrollstrukturen in Python nutzen können.</p>
+<a class="btn btn-primary" href="/grundlagen/kontrollstrukturen">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Klassen</h5>
+<p class="card-text">Lernen Sie, wie Sie Klassen in Python erstellen und verwenden können.</p>
+<a class="btn btn-primary" href="/grundlagen/klassen">Mehr erfahren</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="container my-5">
+<h2>Übersicht der Konzepte</h2>
+<p>Hier finden Sie die wichtigsten Themen der fortgeschrittenen Konzepte in Python.</p>
+<div class="row">
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Dateioperationen</h5>
+<p class="card-text">Lernen Sie, wie Sie Dateien lesen und schreiben können.</p>
+<a class="btn btn-primary" href="/konzepte/dateioperationen">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Ausnahmebehandlung</h5>
+<p class="card-text">Erfahren Sie, wie Sie Fehler in Ihrem Code behandeln können.</p>
+<a class="btn btn-primary" href="/konzepte/ausnahmebehandlung">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Module und Pakete</h5>
+<p class="card-text">Verstehen Sie, wie Sie Ihren Code modularisieren können.</p>
+<a class="btn btn-primary" href="/konzepte/module_pakete">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Listenverständnis</h5>
+<p class="card-text">Verwenden Sie Listen und lernen Sie deren Besonderheiten kennen.</p>
+<a class="btn btn-primary" href="/konzepte/listenverstaendnis">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Generatoren und Iteratoren</h5>
+<p class="card-text">Lernen Sie, wie Sie Generatoren und Iteratoren verwenden können.</p>
+<a class="btn btn-primary" href="/konzepte/generatoren_iteratoren">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Dekoratoren</h5>
+<p class="card-text">Entdecken Sie, wie Sie Funktionen mit Dekoratoren erweitern können.</p>
+<a class="btn btn-primary" href="/konzepte/dekoratoren">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Kontextmanager</h5>
+<p class="card-text">Verwenden Sie Kontextmanager für die Ressourcenverwaltung.</p>
+<a class="btn btn-primary" href="/konzepte/kontextmanager">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Multithreading und Multiprocessing</h5>
+<p class="card-text">Lernen Sie, wie Sie parallele Aufgaben ausführen können.</p>
+<a class="btn btn-primary" href="/konzepte/multithreading_multiprocessing">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Asynchrone Programmierung</h5>
+<p class="card-text">Tauchen Sie in die Welt der asynchronen Programmierung ein.</p>
+<a class="btn btn-primary" href="/konzepte/asynchrone_programmierung">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Unit-Testing</h5>
+<p class="card-text">Lernen Sie, wie Sie Unit-Tests erstellen.</p>
+<a class="btn btn-primary" href="/konzepte/unit_testing">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Mocking</h5>
+<p class="card-text">Erfahren Sie, wie Sie Testdoubles einsetzen können.</p>
+<a class="btn btn-primary" href="/konzepte/mocking">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Design Patterns</h5>
+<p class="card-text">Entdecken Sie bewährte Lösungen für häufige Probleme.</p>
+<a class="btn btn-primary" href="/konzepte/design_patterns">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Datenbankzugriffe</h5>
+<p class="card-text">Erfahren Sie, wie Sie mit Datenbanken arbeiten können.</p>
+<a class="btn btn-primary" href="/konzepte/datenbankzugriffe">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Web Scraping</h5>
+<p class="card-text">Lernen Sie, wie Sie Daten aus dem Web extrahieren können.</p>
+<a class="btn btn-primary" href="/konzepte/web_scraping">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Regular Expressions</h5>
+<p class="card-text">Verwenden Sie reguläre Ausdrücke für die Textverarbeitung.</p>
+<a class="btn btn-primary" href="/konzepte/regular_expressions">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Erweiterte Funktionen</h5>
+<p class="card-text">Lernen Sie erweiterte Funktionstechniken in Python kennen.</p>
+<a class="btn btn-primary" href="/konzepte/erweiterte_funktionen">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Metaprogrammierung</h5>
+<p class="card-text">Erfahren Sie, wie Sie Code schreiben, der Code generiert.</p>
+<a class="btn btn-primary" href="/konzepte/metaprogrammierung">Mehr erfahren</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="container my-5">
+<h2>Übersicht der Bibliotheken</h2>
+<p>Hier finden Sie die wichtigsten und am häufigsten verwendeten Bibliotheken in Python.</p>
+<div class="row">
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">NumPy</h5>
+<p class="card-text">Eine Bibliothek für wissenschaftliches Rechnen mit Unterstützung für große, mehrdimensionale Arrays und Matrizen.</p>
+<a class="btn btn-primary" href="/bibliotheken/numpy">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Pandas</h5>
+<p class="card-text">Eine leistungsstarke Datenanalyse- und Datenverarbeitungsbibliothek.</p>
+<a class="btn btn-primary" href="/bibliotheken/pandas">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Matplotlib</h5>
+<p class="card-text">Eine Bibliothek zur Erstellung statischer, animierter und interaktiver Visualisierungen in Python.</p>
+<a class="btn btn-primary" href="/bibliotheken/matplotlib">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Scikit-Learn</h5>
+<p class="card-text">Eine Bibliothek für maschinelles Lernen, die einfache und effiziente Tools für Datenanalyse und -mining bietet.</p>
+<a class="btn btn-primary" href="/bibliotheken/scikit-learn">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">TensorFlow</h5>
+<p class="card-text">Eine Open-Source-Bibliothek für maschinelles Lernen und künstliche Intelligenz.</p>
+<a class="btn btn-primary" href="/bibliotheken/tensorflow">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Keras</h5>
+<p class="card-text">Eine benutzerfreundliche API für das Erstellen und Trainieren von Deep-Learning-Modellen.</p>
+<a class="btn btn-primary" href="/bibliotheken/keras">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Flask</h5>
+<p class="card-text">Ein leichtgewichtiges Web-Framework für Python.</p>
+<a class="btn btn-primary" href="/bibliotheken/flask">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Django</h5>
+<p class="card-text">Ein hochgradig leistungsfähiges Web-Framework für Python, das die Entwicklung von Webanwendungen erleichtert.</p>
+<a class="btn btn-primary" href="/bibliotheken/django">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Requests</h5>
+<p class="card-text">Eine einfache, aber leistungsstarke Bibliothek für HTTP-Anfragen in Python.</p>
+<a class="btn btn-primary" href="/bibliotheken/requests">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">BeautifulSoup</h5>
+<p class="card-text">Eine Bibliothek zum Parsen von HTML und XML.</p>
+<a class="btn btn-primary" href="/bibliotheken/beautifulsoup">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Audio</h5>
+<p class="card-text">Bibliotheken für die Arbeit mit Audio.</p>
+<a class="btn btn-primary" href="/bibliotheken/audio">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Musik</h5>
+<p class="card-text">Bibliotheken für die Arbeit mit Musik.</p>
+<a class="btn btn-primary" href="/bibliotheken/musik">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Video</h5>
+<p class="card-text">Bibliotheken für die Arbeit mit Video.</p>
+<a class="btn btn-primary" href="/bibliotheken/video">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Foto</h5>
+<p class="card-text">Bibliotheken für die Arbeit mit Fotos.</p>
+<a class="btn btn-primary" href="/bibliotheken/foto">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Bilder</h5>
+<p class="card-text">Bibliotheken für die Arbeit mit Bildern.</p>
+<a class="btn btn-primary" href="/bibliotheken/bilder">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Grafik</h5>
+<p class="card-text">Bibliotheken für die Arbeit mit Grafik.</p>
+<a class="btn btn-primary" href="/bibliotheken/grafik">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Beruf</h5>
+<p class="card-text">Bibliotheken für berufliche Anwendungen.</p>
+<a class="btn btn-primary" href="/bibliotheken/beruf">Mehr erfahren</a>
+</div>
+</div>
+</div>
+<div class="col-md-4 mb-3">
+<div class="card">
+<div class="card-body">
+<h5 class="card-title">Hobbys</h5>
+<p class="card-text">Bibliotheken für Hobbys.</p>
+<a class="btn btn-primary" href="/bibliotheken/hobbys">Mehr erfahren</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<footer class="bg-dark text-white text-center py-4">
+<div class="container">
+<img alt="Logo" class="mb-2" src="{{ url_for('static', filename='images/logo.jpg') }}" style="height: 50px;"/>
+<ul class="list-inline">
+<li class="list-inline-item"><a class="text-white" href="/impressum">Impressum</a></li>
+<li class="list-inline-item"><a class="text-white" href="/datenschutz">Datenschutz</a></li>
+</ul>
+<p>© 2024 Python Schulungsseite</p>
+</div>
+</footer>
+<script src="/static/js/jquery-3.5.1.slim.min.js"></script>
+<script src="/static/js/popper.min.js"></script>
+<script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-        <h3>Merkmale von Python</h3>
-        <ul>
-            <li><strong>Einfach zu lernen und zu verwenden:</strong> Python hat eine klare und einfache Syntax, die es Anfängern leicht macht, die Grundlagen zu erlernen.</li>
-            <li><strong>Interpretiert:</strong> Python ist eine interpretierte Sprache, was bedeutet, dass der Code Zeile für Zeile ausgeführt wird, was das Debuggen erleichtert.</li>
-            <li><strong>Plattformunabhängig:</strong> Python läuft auf vielen Betriebssystemen, einschließlich Windows, MacOS und Linux.</li>
-            <li><strong>Umfangreiche Standardbibliothek:</strong> Python kommt mit einer großen Standardbibliothek, die viele Funktionen und Module für verschiedene Aufgaben bietet.</li>
-            <li><strong>Gemeinschaft und Unterstützung:</strong> Python hat eine große und aktive Gemeinschaft, die reichlich Dokumentation, Tutorials und Foren bietet.</li>
-        </ul>
 
-        <h3>Warum ist Python so beliebt?</h3>
-        <p>Python ist aufgrund seiner Vielseitigkeit und Benutzerfreundlichkeit bei Entwicklern aller Erfahrungsstufen beliebt. Es wird in vielen Bereichen eingesetzt, darunter Webentwicklung, Datenanalyse, künstliche Intelligenz, wissenschaftliche Berechnungen und vieles mehr. Hier sind einige Gründe für seine Beliebtheit:</p>
-        <ul>
-            <li><strong>Lesbarkeit:</strong> Die Syntax von Python ist klar und leicht lesbar, was die Wartung und Weiterentwicklung von Code erleichtert.</li>
-            <li><strong>Vielseitigkeit:</strong> Python kann für eine Vielzahl von Anwendungen verwendet werden, von einfachen Skripten bis hin zu komplexen maschinellen Lernalgorithmen.</li>
-            <li><strong>Gemeinschaft:</strong> Eine große Gemeinschaft bedeutet reichlich Unterstützung, zahlreiche Bibliotheken und Frameworks sowie viele Ressourcen zum Lernen.</li>
-            <li><strong>Bibliotheken und Frameworks:</strong> Python bietet eine Vielzahl von Bibliotheken und Frameworks, die die Entwicklung beschleunigen und erleichtern, wie Django für Webentwicklung und TensorFlow für maschinelles Lernen.</li>
-        </ul>
+<script>
+    function toggleCode(id) {
+        var codeBlock = document.getElementById(id);
+        if (codeBlock.classList.contains('visible')) {
+            codeBlock.classList.remove('visible');
+        } else {
+            codeBlock.classList.add('visible');
+        }
+    }
 
-        <h3>Einsatzbereiche von Python</h3>
-        <p>Python ist in vielen Bereichen der Softwareentwicklung weit verbreitet. Hier sind einige der wichtigsten Einsatzbereiche:</p>
-        <ul>
-            <li><strong>Webentwicklung:</strong> Frameworks wie Django und Flask erleichtern die Entwicklung von Webanwendungen.</li>
-            <li><strong>Datenanalyse:</strong> Bibliotheken wie Pandas, NumPy und Matplotlib machen Python zur bevorzugten Wahl für Datenwissenschaftler.</li>
-            <li><strong>Künstliche Intelligenz und maschinelles Lernen:</strong> Bibliotheken wie TensorFlow, Keras und Scikit-learn unterstützen die Entwicklung komplexer Algorithmen.</li>
-            <li><strong>Wissenschaftliche Berechnungen:</strong> Python wird in wissenschaftlichen Disziplinen häufig für die Analyse großer Datenmengen verwendet.</li>
-            <li><strong>Skripterstellung und Automatisierung:</strong> Python eignet sich hervorragend für die Automatisierung sich wiederholender Aufgaben und das Schreiben von Skripten.</li>
-            <li><strong>Spieleentwicklung:</strong> Bibliotheken wie Pygame ermöglichen die Entwicklung von Spielen.</li>
-            <li><strong>Netzwerkprogrammierung:</strong> Python bietet zahlreiche Module für die Netzwerkprogrammierung und das Schreiben von Netzwerkdiensten.</li>
-        </ul>
-
-        <section class="container my-5">
-            <h2>Übersicht der Grundlagen</h2>
-            <p>Hier finden Sie die wichtigsten Themen der Python-Grundlagen.</p>
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Variablen</h5>
-                            <p class="card-text">Erfahren Sie, wie Sie in Python Variablen verwenden und manipulieren können.</p>
-                            <a href="/grundlagen/variablen" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Listen</h5>
-                            <p class="card-text">Lernen Sie, wie Sie Listen in Python erstellen und verwenden können.</p>
-                            <a href="/grundlagen/listen" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Dictionaries</h5>
-                            <p class="card-text">Entdecken Sie, wie Sie Dictionaries in Python nutzen können.</p>
-                            <a href="/grundlagen/dictionaries" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Tupel</h5>
-                            <p class="card-text">Erfahren Sie mehr über Tupel und ihre Verwendung in Python.</p>
-                            <a href="/grundlagen/tupel" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Datentypen</h5>
-                            <p class="card-text">Lernen Sie die verschiedenen Datentypen in Python kennen.</p>
-                            <a href="/grundlagen/datentypen" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Funktionen</h5>
-                            <p class="card-text">Verstehen Sie, wie Sie Funktionen in Python definieren und verwenden können.</p>
-                            <a href="/grundlagen/funktionen" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Kontrollstrukturen</h5>
-                            <p class="card-text">Erfahren Sie, wie Sie Kontrollstrukturen in Python nutzen können.</p>
-                            <a href="/grundlagen/kontrollstrukturen" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Klassen</h5>
-                            <p class="card-text">Lernen Sie, wie Sie Klassen in Python erstellen und verwenden können.</p>
-                            <a href="/grundlagen/klassen" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="container my-5">
-            <h2>Übersicht der Konzepte</h2>
-            <p>Hier finden Sie die wichtigsten Themen der fortgeschrittenen Konzepte in Python.</p>
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Dateioperationen</h5>
-                            <p class="card-text">Lernen Sie, wie Sie Dateien lesen und schreiben können.</p>
-                            <a href="/konzepte/dateioperationen" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Ausnahmebehandlung</h5>
-                            <p class="card-text">Erfahren Sie, wie Sie Fehler in Ihrem Code behandeln können.</p>
-                            <a href="/konzepte/ausnahmebehandlung" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Module und Pakete</h5>
-                            <p class="card-text">Verstehen Sie, wie Sie Ihren Code modularisieren können.</p>
-                            <a href="/konzepte/module_pakete" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Listenverständnis</h5>
-                            <p class="card-text">Verwenden Sie Listen und lernen Sie deren Besonderheiten kennen.</p>
-                            <a href="/konzepte/listenverstaendnis" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Generatoren und Iteratoren</h5>
-                            <p class="card-text">Lernen Sie, wie Sie Generatoren und Iteratoren verwenden können.</p>
-                            <a href="/konzepte/generatoren_iteratoren" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Dekoratoren</h5>
-                            <p class="card-text">Entdecken Sie, wie Sie Funktionen mit Dekoratoren erweitern können.</p>
-                            <a href="/konzepte/dekoratoren" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Kontextmanager</h5>
-                            <p class="card-text">Verwenden Sie Kontextmanager für die Ressourcenverwaltung.</p>
-                            <a href="/konzepte/kontextmanager" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Multithreading und Multiprocessing</h5>
-                            <p class="card-text">Lernen Sie, wie Sie parallele Aufgaben ausführen können.</p>
-                            <a href="/konzepte/multithreading_multiprocessing" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Asynchrone Programmierung</h5>
-                            <p class="card-text">Tauchen Sie in die Welt der asynchronen Programmierung ein.</p>
-                            <a href="/konzepte/asynchrone_programmierung" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Unit-Testing</h5>
-                            <p class="card-text">Lernen Sie, wie Sie Unit-Tests erstellen.</p>
-                            <a href="/konzepte/unit_testing" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Mocking</h5>
-                            <p class="card-text">Erfahren Sie, wie Sie Testdoubles einsetzen können.</p>
-                            <a href="/konzepte/mocking" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Design Patterns</h5>
-                            <p class="card-text">Entdecken Sie bewährte Lösungen für häufige Probleme.</p>
-                            <a href="/konzepte/design_patterns" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Datenbankzugriffe</h5>
-                            <p class="card-text">Erfahren Sie, wie Sie mit Datenbanken arbeiten können.</p>
-                            <a href="/konzepte/datenbankzugriffe" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Web Scraping</h5>
-                            <p class="card-text">Lernen Sie, wie Sie Daten aus dem Web extrahieren können.</p>
-                            <a href="/konzepte/web_scraping" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Regular Expressions</h5>
-                            <p class="card-text">Verwenden Sie reguläre Ausdrücke für die Textverarbeitung.</p>
-                            <a href="/konzepte/regular_expressions" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Erweiterte Funktionen</h5>
-                            <p class="card-text">Lernen Sie erweiterte Funktionstechniken in Python kennen.</p>
-                            <a href="/konzepte/erweiterte_funktionen" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Metaprogrammierung</h5>
-                            <p class="card-text">Erfahren Sie, wie Sie Code schreiben, der Code generiert.</p>
-                            <a href="/konzepte/metaprogrammierung" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="container my-5">
-            <h2>Übersicht der Bibliotheken</h2>
-            <p>Hier finden Sie die wichtigsten und am häufigsten verwendeten Bibliotheken in Python.</p>
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">NumPy</h5>
-                            <p class="card-text">Eine Bibliothek für wissenschaftliches Rechnen mit Unterstützung für große, mehrdimensionale Arrays und Matrizen.</p>
-                            <a href="/bibliotheken/numpy" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Pandas</h5>
-                            <p class="card-text">Eine leistungsstarke Datenanalyse- und Datenverarbeitungsbibliothek.</p>
-                            <a href="/bibliotheken/pandas" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Matplotlib</h5>
-                            <p class="card-text">Eine Bibliothek zur Erstellung statischer, animierter und interaktiver Visualisierungen in Python.</p>
-                            <a href="/bibliotheken/matplotlib" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Scikit-Learn</h5>
-                            <p class="card-text">Eine Bibliothek für maschinelles Lernen, die einfache und effiziente Tools für Datenanalyse und -mining bietet.</p>
-                            <a href="/bibliotheken/scikit-learn" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">TensorFlow</h5>
-                            <p class="card-text">Eine Open-Source-Bibliothek für maschinelles Lernen und künstliche Intelligenz.</p>
-                            <a href="/bibliotheken/tensorflow" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Keras</h5>
-                            <p class="card-text">Eine benutzerfreundliche API für das Erstellen und Trainieren von Deep-Learning-Modellen.</p>
-                            <a href="/bibliotheken/keras" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Flask</h5>
-                            <p class="card-text">Ein leichtgewichtiges Web-Framework für Python.</p>
-                            <a href="/bibliotheken/flask" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Django</h5>
-                            <p class="card-text">Ein hochgradig leistungsfähiges Web-Framework für Python, das die Entwicklung von Webanwendungen erleichtert.</p>
-                            <a href="/bibliotheken/django" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Requests</h5>
-                            <p class="card-text">Eine einfache, aber leistungsstarke Bibliothek für HTTP-Anfragen in Python.</p>
-                            <a href="/bibliotheken/requests" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">BeautifulSoup</h5>
-                            <p class="card-text">Eine Bibliothek zum Parsen von HTML und XML.</p>
-                            <a href="/bibliotheken/beautifulsoup" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Audio</h5>
-                            <p class="card-text">Bibliotheken für die Arbeit mit Audio.</p>
-                            <a href="/bibliotheken/audio" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Musik</h5>
-                            <p class="card-text">Bibliotheken für die Arbeit mit Musik.</p>
-                            <a href="/bibliotheken/musik" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Video</h5>
-                            <p class="card-text">Bibliotheken für die Arbeit mit Video.</p>
-                            <a href="/bibliotheken/video" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Foto</h5>
-                            <p class="card-text">Bibliotheken für die Arbeit mit Fotos.</p>
-                            <a href="/bibliotheken/foto" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Bilder</h5>
-                            <p class="card-text">Bibliotheken für die Arbeit mit Bildern.</p>
-                            <a href="/bibliotheken/bilder" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Grafik</h5>
-                            <p class="card-text">Bibliotheken für die Arbeit mit Grafik.</p>
-                            <a href="/bibliotheken/grafik" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Beruf</h5>
-                            <p class="card-text">Bibliotheken für berufliche Anwendungen.</p>
-                            <a href="/bibliotheken/beruf" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Hobbys</h5>
-                            <p class="card-text">Bibliotheken für Hobbys.</p>
-                            <a href="/bibliotheken/hobbys" class="btn btn-primary">Mehr erfahren</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </section>
-
-    <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
-                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
-            </ul>
-            <p>© 2024 Python Schulungsseite</p>
-        </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    function copyToClipboard(id) {
+        var copyText = document.querySelector('#' + id + ' pre code').textContent;
+        var textArea = document.createElement("textarea");
+        textArea.style.position = "fixed";
+        textArea.style.top = 0;
+        textArea.style.left = 0;
+        textArea.style.width = "2em";
+        textArea.style.height = "2em";
+        textArea.style.padding = 0;
+        textArea.style.border = "none";
+        textArea.style.outline = "none";
+        textArea.style.boxShadow = "none";
+        textArea.style.background = "transparent";
+        textArea.value = copyText;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand("copy");
+            alert("Code kopiert!");
+        } catch (err) {
+            console.error("Konnte nicht kopieren", err);
+        }
+        document.body.removeChild(textArea);
+    }
+    </script>
 </body>
 </html>

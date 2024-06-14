@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Erweiterte Funktionen</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Python Erweiterte Funktionen</title>
+<link href="/static/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet"/>
+<style>
         .code-block {
             background-color: #f4f4f4;
             border: 1px solid #ccc;
@@ -35,120 +36,108 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Python Schulungsseite</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Startseite</a>
-                </li>
-                <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownKonzepte" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<a class="navbar-brand" href="/">Python Schulungsseite</a>
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="/">Startseite</a>
+</li>
+<li class="nav-item dropdown active">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdownKonzepte" role="button">
                         Konzepte
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownKonzepte">
-                        <a class="dropdown-item" href="/konzepte">Konzepte Übersicht</a>
-                        <a class="dropdown-item" href="/konzepte/dateioperationen">Dateioperationen</a>
-                        <a class="dropdown-item" href="/konzepte/ausnahmebehandlung">Ausnahmebehandlung</a>
-                        <a class="dropdown-item" href="/konzepte/module_pakete">Module und Pakete</a>
-                        <a class="dropdown-item" href="/konzepte/listenverstaendnis">Listenverständnis</a>
-                        <a class="dropdown-item" href="/konzepte/generatoren_iteratoren">Generatoren und Iteratoren</a>
-                        <a class="dropdown-item" href="/konzepte/dekoratoren">Dekoratoren</a>
-                        <a class="dropdown-item" href="/konzepte/kontextmanager">Kontextmanager</a>
-                        <a class="dropdown-item" href="/konzepte/multithreading_multiprocessing">Multithreading und Multiprocessing</a>
-                        <a class="dropdown-item" href="/konzepte/asynchrone_programmierung">Asynchrone Programmierung</a>
-                        <a class="dropdown-item" href="/konzepte/unit_testing">Unit-Testing</a>
-                        <a class="dropdown-item" href="/konzepte/mocking">Mocking</a>
-                        <a class="dropdown-item" href="/konzepte/design_patterns">Design Patterns</a>
-                        <a class="dropdown-item" href="/konzepte/datenbankzugriffe">Datenbankzugriffe</a>
-                        <a class="dropdown-item" href="/konzepte/web_scraping">Web Scraping</a>
-                        <a class="dropdown-item" href="/konzepte/regular_expressions">Regular Expressions</a>
-                        <a class="dropdown-item" href="/konzepte/erweiterte_funktionen">Erweiterte Funktionen</a>
-                        <!-- Weitere Konzepte können hier hinzugefügt werden -->
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/wiki">Wiki</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/videos">Videos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/quiz">Quiz</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <header class="jumbotron text-center">
-        <div class="container">
-            <h1 class="display-4">Python Erweiterte Funktionen</h1>
-        </div>
-    </header>
-
-    <section class="container my-5">
-        <h2>Einführung in Erweiterte Funktionen</h2>
-        <p>Python bietet mehrere eingebaute Funktionen, die erweiterte Funktionalitäten ermöglichen, wie <code>map()</code>, <code>filter()</code>, <code>reduce()</code> und <code>lambda</code>-Funktionen. Diese Funktionen sind nützlich für das Verarbeiten und Transformieren von Daten. Weitere Informationen finden Sie in der <a href="https://docs.python.org/3/library/functions.html" target="_blank">offiziellen Python-Dokumentation</a>.</p>
-
-        <h3>Verwendung von <code>map()</code></h3>
-        <p>Die <code>map()</code>-Funktion wendet eine Funktion auf jedes Element einer iterierbaren Sammlung (z.B. eine Liste) an und gibt eine Karte des Ergebnisses zurück.</p>
-        <button class="btn btn-link" onclick="toggleCode('code-block-map')">Beispielcode anzeigen</button>
-        <div class="code-block" id="code-block-map">
-            <button class="copy-button" onclick="copyToClipboard('code-block-map-code')">Code kopieren</button>
-            <pre><code id="code-block-map-code">zahlen = [1, 2, 3, 4]
+<div aria-labelledby="navbarDropdownKonzepte" class="dropdown-menu">
+<a class="dropdown-item" href="/konzepte">Konzepte Übersicht</a>
+<a class="dropdown-item" href="/konzepte/dateioperationen">Dateioperationen</a>
+<a class="dropdown-item" href="/konzepte/ausnahmebehandlung">Ausnahmebehandlung</a>
+<a class="dropdown-item" href="/konzepte/module_pakete">Module und Pakete</a>
+<a class="dropdown-item" href="/konzepte/listenverstaendnis">Listenverständnis</a>
+<a class="dropdown-item" href="/konzepte/generatoren_iteratoren">Generatoren und Iteratoren</a>
+<a class="dropdown-item" href="/konzepte/dekoratoren">Dekoratoren</a>
+<a class="dropdown-item" href="/konzepte/kontextmanager">Kontextmanager</a>
+<a class="dropdown-item" href="/konzepte/multithreading_multiprocessing">Multithreading und Multiprocessing</a>
+<a class="dropdown-item" href="/konzepte/asynchrone_programmierung">Asynchrone Programmierung</a>
+<a class="dropdown-item" href="/konzepte/unit_testing">Unit-Testing</a>
+<a class="dropdown-item" href="/konzepte/mocking">Mocking</a>
+<a class="dropdown-item" href="/konzepte/design_patterns">Design Patterns</a>
+<a class="dropdown-item" href="/konzepte/datenbankzugriffe">Datenbankzugriffe</a>
+<a class="dropdown-item" href="/konzepte/web_scraping">Web Scraping</a>
+<a class="dropdown-item" href="/konzepte/regular_expressions">Regular Expressions</a>
+<a class="dropdown-item" href="/konzepte/erweiterte_funktionen">Erweiterte Funktionen</a>
+<!-- Weitere Konzepte können hier hinzugefügt werden -->
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/wiki">Wiki</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/videos">Videos</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/quiz">Quiz</a>
+</li>
+</ul>
+</div>
+</nav>
+<header class="jumbotron text-center">
+<div class="container">
+<h1 class="display-4">Python Erweiterte Funktionen</h1>
+</div>
+</header>
+<section class="container my-5">
+<h2>Einführung in Erweiterte Funktionen</h2>
+<p>Python bietet mehrere eingebaute Funktionen, die erweiterte Funktionalitäten ermöglichen, wie <code>map()</code>, <code>filter()</code>, <code>reduce()</code> und <code>lambda</code>-Funktionen. Diese Funktionen sind nützlich für das Verarbeiten und Transformieren von Daten. Weitere Informationen finden Sie in der <a href="https://docs.python.org/3/library/functions.html" target="_blank">offiziellen Python-Dokumentation</a>.</p>
+<h3>Verwendung von <code>map()</code></h3>
+<p>Die <code>map()</code>-Funktion wendet eine Funktion auf jedes Element einer iterierbaren Sammlung (z.B. eine Liste) an und gibt eine Karte des Ergebnisses zurück.</p>
+<button class="btn btn-link" onclick="toggleCode('code-block-map')">Beispielcode anzeigen</button>
+<div class="code-block" id="code-block-map"><button class="copy-button" onclick="copyToClipboard('code-block-map-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<pre><code id="code-block-map-code">zahlen = [1, 2, 3, 4]
 quadrate = list(map(lambda x: x ** 2, zahlen))
 print(quadrate)  # Ausgabe: [1, 4, 9, 16]</code></pre>
-        </div>
-
-        <h3>Verwendung von <code>filter()</code></h3>
-        <p>Die <code>filter()</code>-Funktion filtert Elemente einer iterierbaren Sammlung basierend auf einer Funktion, die entweder <code>True</code> oder <code>False</code> zurückgibt.</p>
-        <button class="btn btn-link" onclick="toggleCode('code-block-filter')">Beispielcode anzeigen</button>
-        <div class="code-block" id="code-block-filter">
-            <button class="copy-button" onclick="copyToClipboard('code-block-filter-code')">Code kopieren</button>
-            <pre><code id="code-block-filter-code">zahlen = [1, 2, 3, 4, 5, 6]
+</div>
+<h3>Verwendung von <code>filter()</code></h3>
+<p>Die <code>filter()</code>-Funktion filtert Elemente einer iterierbaren Sammlung basierend auf einer Funktion, die entweder <code>True</code> oder <code>False</code> zurückgibt.</p>
+<button class="btn btn-link" onclick="toggleCode('code-block-filter')">Beispielcode anzeigen</button>
+<div class="code-block" id="code-block-filter"><button class="copy-button" onclick="copyToClipboard('code-block-filter-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<pre><code id="code-block-filter-code">zahlen = [1, 2, 3, 4, 5, 6]
 gerade_zahlen = list(filter(lambda x: x % 2 == 0, zahlen))
 print(gerade_zahlen)  # Ausgabe: [2, 4, 6]</code></pre>
-        </div>
-
-        <h3>Verwendung von <code>reduce()</code></h3>
-        <p>Die <code>reduce()</code>-Funktion, die im <code>functools</code>-Modul enthalten ist, wendet eine Funktion kumulativ auf die Elemente einer iterierbaren Sammlung an, sodass sie auf einen einzigen Wert reduziert werden.</p>
-        <button class="btn btn-link" onclick="toggleCode('code-block-reduce')">Beispielcode anzeigen</button>
-        <div class="code-block" id="code-block-reduce">
-            <button class="copy-button" onclick="copyToClipboard('code-block-reduce-code')">Code kopieren</button>
-            <pre><code id="code-block-reduce-code">from functools import reduce
+</div>
+<h3>Verwendung von <code>reduce()</code></h3>
+<p>Die <code>reduce()</code>-Funktion, die im <code>functools</code>-Modul enthalten ist, wendet eine Funktion kumulativ auf die Elemente einer iterierbaren Sammlung an, sodass sie auf einen einzigen Wert reduziert werden.</p>
+<button class="btn btn-link" onclick="toggleCode('code-block-reduce')">Beispielcode anzeigen</button>
+<div class="code-block" id="code-block-reduce"><button class="copy-button" onclick="copyToClipboard('code-block-reduce-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<pre><code id="code-block-reduce-code">from functools import reduce
 zahlen = [1, 2, 3, 4]
 produkt = reduce(lambda x, y: x * y, zahlen)
 print(produkt)  # Ausgabe: 24</code></pre>
-        </div>
-
-        <h3>Verwendung von <code>lambda</code>-Funktionen</h3>
-        <p><code>lambda</code>-Funktionen sind kleine anonyme Funktionen, die mit dem Schlüsselwort <code>lambda</code> erstellt werden. Sie können überall dort verwendet werden, wo eine Funktion erforderlich ist.</p>
-        <button class="btn btn-link" onclick="toggleCode('code-block-lambda')">Beispielcode anzeigen</button>
-        <div class="code-block" id="code-block-lambda">
-            <button class="copy-button" onclick="copyToClipboard('code-block-lambda-code')">Code kopieren</button>
-            <pre><code id="code-block-lambda-code">verdoppeln = lambda x: x * 2
+</div>
+<h3>Verwendung von <code>lambda</code>-Funktionen</h3>
+<p><code>lambda</code>-Funktionen sind kleine anonyme Funktionen, die mit dem Schlüsselwort <code>lambda</code> erstellt werden. Sie können überall dort verwendet werden, wo eine Funktion erforderlich ist.</p>
+<button class="btn btn-link" onclick="toggleCode('code-block-lambda')">Beispielcode anzeigen</button>
+<div class="code-block" id="code-block-lambda"><button class="copy-button" onclick="copyToClipboard('code-block-lambda-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<pre><code id="code-block-lambda-code">verdoppeln = lambda x: x * 2
 print(verdoppeln(5))  # Ausgabe: 10</code></pre>
-        </div>
-    </section>
-
-    <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
-                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
-            </ul>
-            <p>© 2024 Python Schulungsseite</p>
-        </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
+</div>
+</section>
+<footer class="bg-dark text-white text-center py-4">
+<div class="container">
+<img alt="Logo" class="mb-2" src="{{ url_for('static', filename='images/logo.jpg') }}" style="height: 50px;"/>
+<ul class="list-inline">
+<li class="list-inline-item"><a class="text-white" href="/impressum">Impressum</a></li>
+<li class="list-inline-item"><a class="text-white" href="/datenschutz">Datenschutz</a></li>
+</ul>
+<p>© 2024 Python Schulungsseite</p>
+</div>
+</footer>
+<script src="/static/js/jquery-3.5.1.slim.min.js"></script>
+<script src="/static/js/popper.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script>
         function toggleCode(id) {
             var codeBlock = document.getElementById(id);
             if (codeBlock.classList.contains('visible')) {

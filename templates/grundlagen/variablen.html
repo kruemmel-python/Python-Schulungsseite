@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Variablen</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Python Variablen</title>
+<link href="/static/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet"/>
+<style>
         .code-block {
             background-color: #f4f4f4;
             border: 1px solid #ccc;
@@ -35,71 +36,66 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Python Schulungsseite</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Startseite</a>
-                </li>
-                <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<a class="navbar-brand" href="/">Python Schulungsseite</a>
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="/">Startseite</a>
+</li>
+<li class="nav-item dropdown active">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdown" role="button">
                         Grundlagen
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="/grundlagen">Grundlagen Übersicht</a>
-                        <a class="dropdown-item" href="/grundlagen/variablen">Variablen</a>
-                        <a class="dropdown-item" href="/grundlagen/listen">Listen</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/konzepte">Konzepte</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/wiki">Wiki</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/videos">Videos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/quiz">Quiz</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <header class="jumbotron text-center">
-        <div class="container">
-            <h1 class="display-4">Python Variablen</h1>
-        </div>
-    </header>
-
-    <section class="container my-5">
-        <h2>Was sind Python Variablen?</h2>
-        <p>Variablen sind ein grundlegendes Konzept in der Programmierung. Sie ermöglichen es, Daten in einem Programm zu speichern und zu manipulieren. In Python müssen Variablen nicht deklariert werden, bevor sie verwendet werden.</p>
-        <p>Weitere Informationen zu Variablen in Python finden Sie in der <a href="https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator" target="_blank">offiziellen Python-Dokumentation</a>.</p>
-
-        <h3>Variable in Python – eine Typfrage</h3>
-        <p>In Python können Variablen verschiedene Datentypen speichern. Hier sind einige der gängigsten Datentypen:</p>
-        <ul>
-            <li><strong>int:</strong> Ganze Zahlen, z.B. 5</li>
-            <li><strong>float:</strong> Fließkommazahlen, z.B. 3.14</li>
-            <li><strong>str:</strong> Zeichenketten, z.B. "Hallo"</li>
-            <li><strong>bool:</strong> Boolesche Werte, z.B. True oder False</li>
-            <li><strong>list:</strong> Listen, z.B. [1, 2, 3]</li>
-            <li><strong>dict:</strong> Wörterbücher, z.B. {"name": "Alice", "alter": 30}</li>
-        </ul>
-        <p>Weitere Informationen zu Datentypen finden Sie in der <a href="https://docs.python.org/3/library/stdtypes.html" target="_blank">offiziellen Python-Dokumentation</a>.</p>
-
-        <h3>Beispiele für Variablen</h3>
-        <p>Hier sind einige Beispiele für die Verwendung von Variablen in Python:</p>
-        <button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
-        <div class="code-block" id="code-block-1">
-            <button class="copy-button" onclick="copyToClipboard('code-block-1-code')">Code kopieren</button>
-            <pre><code id="code-block-1-code"># Eine Variable mit einem Ganzzahlwert
+<div aria-labelledby="navbarDropdown" class="dropdown-menu">
+<a class="dropdown-item" href="/grundlagen">Grundlagen Übersicht</a>
+<a class="dropdown-item" href="/grundlagen/variablen">Variablen</a>
+<a class="dropdown-item" href="/grundlagen/listen">Listen</a>
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/konzepte">Konzepte</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/wiki">Wiki</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/videos">Videos</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/quiz">Quiz</a>
+</li>
+</ul>
+</div>
+</nav>
+<header class="jumbotron text-center">
+<div class="container">
+<h1 class="display-4">Python Variablen</h1>
+</div>
+</header>
+<section class="container my-5">
+<h2>Was sind Python Variablen?</h2>
+<p>Variablen sind ein grundlegendes Konzept in der Programmierung. Sie ermöglichen es, Daten in einem Programm zu speichern und zu manipulieren. In Python müssen Variablen nicht deklariert werden, bevor sie verwendet werden.</p>
+<p>Weitere Informationen zu Variablen in Python finden Sie in der <a href="https://docs.python.org/3/tutorial/introduction.html#using-python-as-a-calculator" target="_blank">offiziellen Python-Dokumentation</a>.</p>
+<h3>Variable in Python – eine Typfrage</h3>
+<p>In Python können Variablen verschiedene Datentypen speichern. Hier sind einige der gängigsten Datentypen:</p>
+<ul>
+<li><strong>int:</strong> Ganze Zahlen, z.B. 5</li>
+<li><strong>float:</strong> Fließkommazahlen, z.B. 3.14</li>
+<li><strong>str:</strong> Zeichenketten, z.B. "Hallo"</li>
+<li><strong>bool:</strong> Boolesche Werte, z.B. True oder False</li>
+<li><strong>list:</strong> Listen, z.B. [1, 2, 3]</li>
+<li><strong>dict:</strong> Wörterbücher, z.B. {"name": "Alice", "alter": 30}</li>
+</ul>
+<p>Weitere Informationen zu Datentypen finden Sie in der <a href="https://docs.python.org/3/library/stdtypes.html" target="_blank">offiziellen Python-Dokumentation</a>.</p>
+<h3>Beispiele für Variablen</h3>
+<p>Hier sind einige Beispiele für die Verwendung von Variablen in Python:</p>
+<button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
+<div class="code-block" id="code-block-1"><button class="copy-button" onclick="copyToClipboard('code-block-1')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<pre><code id="code-block-1-code"># Eine Variable mit einem Ganzzahlwert
 x = 5
 print(x)
 
@@ -115,22 +111,19 @@ print(pi)
 fruits = ["Apfel", "Banane", "Kirsche"]
 print(fruits)
             </code></pre>
-        </div>
-
-        <h3>Regeln für die Namensvergabe von Python Variablen</h3>
-        <ul>
-            <li>Variablennamen müssen mit einem Buchstaben (a-z, A-Z) oder einem Unterstrich (_) beginnen.</li>
-            <li>Der Rest des Namens kann Buchstaben, Ziffern (0-9) oder Unterstriche enthalten.</li>
-            <li>Variablennamen sind case-sensitive (z.B. ist "name" anders als "Name").</li>
-            <li>Vermeiden Sie die Verwendung von Python-Schlüsselwörtern als Variablennamen. Eine Liste der Schlüsselwörter finden Sie in der <a href="https://docs.python.org/3/reference/lexical_analysis.html#keywords" target="_blank">offiziellen Python-Dokumentation</a>.</li>
-        </ul>
-
-        <h3>Umwandlung von Typen</h3>
-        <p>Manchmal ist es notwendig, den Datentyp einer Variablen zu ändern. Python bietet eingebaute Funktionen für die Typumwandlung:</p>
-        <button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
-        <div class="code-block" id="code-block-2">
-            <button class="copy-button" onclick="copyToClipboard('code-block-2-code')">Code kopieren</button>
-            <pre><code id="code-block-2-code"># Umwandlung von int zu float
+</div>
+<h3>Regeln für die Namensvergabe von Python Variablen</h3>
+<ul>
+<li>Variablennamen müssen mit einem Buchstaben (a-z, A-Z) oder einem Unterstrich (_) beginnen.</li>
+<li>Der Rest des Namens kann Buchstaben, Ziffern (0-9) oder Unterstriche enthalten.</li>
+<li>Variablennamen sind case-sensitive (z.B. ist "name" anders als "Name").</li>
+<li>Vermeiden Sie die Verwendung von Python-Schlüsselwörtern als Variablennamen. Eine Liste der Schlüsselwörter finden Sie in der <a href="https://docs.python.org/3/reference/lexical_analysis.html#keywords" target="_blank">offiziellen Python-Dokumentation</a>.</li>
+</ul>
+<h3>Umwandlung von Typen</h3>
+<p>Manchmal ist es notwendig, den Datentyp einer Variablen zu ändern. Python bietet eingebaute Funktionen für die Typumwandlung:</p>
+<button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
+<div class="code-block" id="code-block-2"><button class="copy-button" onclick="copyToClipboard('code-block-2')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<pre><code id="code-block-2-code"># Umwandlung von int zu float
 x = 5
 y = float(x)
 print(y)  # Ausgabe: 5.0
@@ -145,63 +138,75 @@ a = 42
 b = str(a)
 print(b)  # Ausgabe: "42"
             </code></pre>
-        </div>
-        <p>Weitere Informationen zur Typumwandlung finden Sie in der <a href="https://docs.python.org/3/library/functions.html#func-int" target="_blank">offiziellen Python-Dokumentation</a>.</p>
-
-        <h3>Type Hints</h3>
-        <p>Python unterstützt Typannotationen (Type Hints), die den erwarteten Typen von Variablen und Funktionsrückgaben angeben. Diese sind besonders nützlich für die Dokumentation und die statische Typprüfung mit Werkzeugen wie mypy.</p>
-        <button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
-        <div class="code-block" id="code-block-3">
-            <button class="copy-button" onclick="copyToClipboard('code-block-3-code')">Code kopieren</button>
-            <pre><code id="code-block-3-code"># Typannotationen für Variablen
+</div>
+<p>Weitere Informationen zur Typumwandlung finden Sie in der <a href="https://docs.python.org/3/library/functions.html#func-int" target="_blank">offiziellen Python-Dokumentation</a>.</p>
+<h3>Type Hints</h3>
+<p>Python unterstützt Typannotationen (Type Hints), die den erwarteten Typen von Variablen und Funktionsrückgaben angeben. Diese sind besonders nützlich für die Dokumentation und die statische Typprüfung mit Werkzeugen wie mypy.</p>
+<button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
+<div class="code-block" id="code-block-3"><button class="copy-button" onclick="copyToClipboard('code-block-3')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<pre><code id="code-block-3-code"># Typannotationen für Variablen
 age: int = 25
 name: str = "Alice"
 pi: float = 3.14159
 
 # Typannotationen für Funktionen
-def greet(name: str) -> str:
+def greet(name: str) -&gt; str:
     return f"Hallo, {name}!"
 
 print(greet("Bob"))
             </code></pre>
-        </div>
-        <p>Weitere Informationen zu Typannotationen finden Sie in der <a href="https://docs.python.org/3/library/typing.html" target="_blank">offiziellen Python-Dokumentation</a>.</p>
-    </section>
+</div>
+<p>Weitere Informationen zu Typannotationen finden Sie in der <a href="https://docs.python.org/3/library/typing.html" target="_blank">offiziellen Python-Dokumentation</a>.</p>
+</section>
+<footer class="bg-dark text-white text-center py-4">
+<div class="container">
+<img alt="Logo" class="mb-2" src="{{ url_for('static', filename='images/logo.jpg') }}" style="height: 50px;"/>
+<ul class="list-inline">
+<li class="list-inline-item"><a class="text-white" href="/impressum">Impressum</a></li>
+<li class="list-inline-item"><a class="text-white" href="/datenschutz">Datenschutz</a></li>
+</ul>
+<p>© 2024 Python Schulungsseite</p>
+</div>
+</footer>
+<script src="/static/js/jquery-3.5.1.slim.min.js"></script>
+<script src="/static/js/popper.min.js"></script>
+<script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
-                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
-            </ul>
-            <p>© 2024 Python Schulungsseite</p>
-        </div>
-    </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        function toggleCode(id) {
-            var codeBlock = document.getElementById(id);
-            if (codeBlock.classList.contains('visible')) {
-                codeBlock.classList.remove('visible');
-            } else {
-                codeBlock.classList.add('visible');
-            }
+<script>
+    function toggleCode(id) {
+        var codeBlock = document.getElementById(id);
+        if (codeBlock.classList.contains('visible')) {
+            codeBlock.classList.remove('visible');
+        } else {
+            codeBlock.classList.add('visible');
         }
+    }
 
-        function copyToClipboard(id) {
-            var copyText = document.getElementById(id + '-code').textContent;
-            var textArea = document.createElement("textarea");
-            textArea.value = copyText;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand("Copy");
-            textArea.remove();
+    function copyToClipboard(id) {
+        var copyText = document.querySelector('#' + id + ' pre code').textContent;
+        var textArea = document.createElement("textarea");
+        textArea.style.position = "fixed";
+        textArea.style.top = 0;
+        textArea.style.left = 0;
+        textArea.style.width = "2em";
+        textArea.style.height = "2em";
+        textArea.style.padding = 0;
+        textArea.style.border = "none";
+        textArea.style.outline = "none";
+        textArea.style.boxShadow = "none";
+        textArea.style.background = "transparent";
+        textArea.value = copyText;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand("copy");
             alert("Code kopiert!");
+        } catch (err) {
+            console.error("Konnte nicht kopieren", err);
         }
+        document.body.removeChild(textArea);
+    }
     </script>
 </body>
 </html>

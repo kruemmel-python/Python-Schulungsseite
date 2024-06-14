@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Asynchrone Programmierung</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Python Asynchrone Programmierung</title>
+<link href="/static/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet"/>
+<style>
         .code-block {
             background-color: #f4f4f4;
             border: 1px solid #ccc;
@@ -35,66 +36,61 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Python Schulungsseite</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Startseite</a>
-                </li>
-                <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownKonzepte" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<a class="navbar-brand" href="/">Python Schulungsseite</a>
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="/">Startseite</a>
+</li>
+<li class="nav-item dropdown active">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdownKonzepte" role="button">
                         Konzepte
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownKonzepte">
-                        <a class="dropdown-item" href="/konzepte">Konzepte Übersicht</a>
-                        <a class="dropdown-item" href="/konzepte/dateioperationen">Dateioperationen</a>
-                        <a class="dropdown-item" href="/konzepte/ausnahmebehandlung">Ausnahmebehandlung</a>
-                        <a class="dropdown-item" href="/konzepte/module_pakete">Module und Pakete</a>
-                        <a class="dropdown-item" href="/konzepte/listenverstaendnis">Listenverständnis</a>
-                        <a class="dropdown-item" href="/konzepte/generatoren_iteratoren">Generatoren und Iteratoren</a>
-                        <a class="dropdown-item" href="/konzepte/dekoratoren">Dekoratoren</a>
-                        <a class="dropdown-item" href="/konzepte/kontextmanager">Kontextmanager</a>
-                        <a class="dropdown-item" href="/konzepte/multithreading_multiprocessing">Multithreading und Multiprocessing</a>
-                        <a class="dropdown-item" href="/konzepte/asynchrone_programmierung">Asynchrone Programmierung</a>
-                        <!-- Weitere Konzepte können hier hinzugefügt werden -->
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/wiki">Wiki</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/videos">Videos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/quiz">Quiz</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <header class="jumbotron text-center">
-        <div class="container">
-            <h1 class="display-4">Python Asynchrone Programmierung</h1>
-        </div>
-    </header>
-
-    <section class="container my-5">
-        <h2>Einführung in Asynchrone Programmierung</h2>
-        <p>Asynchrone Programmierung ermöglicht es, Aufgaben parallel und unabhängig voneinander auszuführen, was die Leistung und Effizienz Ihrer Anwendungen verbessern kann. Weitere Informationen zur asynchronen Programmierung in Python finden Sie in der <a href="https://docs.python.org/3/library/asyncio.html" target="_blank">asyncio-Dokumentation</a>.</p>
-
-        <h3>Grundlagen der asynchronen Programmierung</h3>
-        <p>Asynchrone Programmierung in Python wird hauptsächlich mit Hilfe der <code>asyncio</code>-Bibliothek erreicht. Sie verwendet <code>async</code>- und <code>await</code>-Schlüsselwörter, um asynchrone Funktionen zu definieren und auszuführen.</p>
-
-        <h3>Beispiele für asynchrone Programmierung</h3>
-        <p>Hier sind einige Beispiele für die Verwendung von asynchroner Programmierung in Python:</p>
-        <button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
-        <div class="code-block" id="code-block-1">
-            <button class="copy-button" onclick="copyToClipboard('code-block-1-code')">Code kopieren</button>
-            <pre><code id="code-block-1-code"># Einfache async/await Verwendung
+<div aria-labelledby="navbarDropdownKonzepte" class="dropdown-menu">
+<a class="dropdown-item" href="/konzepte">Konzepte Übersicht</a>
+<a class="dropdown-item" href="/konzepte/dateioperationen">Dateioperationen</a>
+<a class="dropdown-item" href="/konzepte/ausnahmebehandlung">Ausnahmebehandlung</a>
+<a class="dropdown-item" href="/konzepte/module_pakete">Module und Pakete</a>
+<a class="dropdown-item" href="/konzepte/listenverstaendnis">Listenverständnis</a>
+<a class="dropdown-item" href="/konzepte/generatoren_iteratoren">Generatoren und Iteratoren</a>
+<a class="dropdown-item" href="/konzepte/dekoratoren">Dekoratoren</a>
+<a class="dropdown-item" href="/konzepte/kontextmanager">Kontextmanager</a>
+<a class="dropdown-item" href="/konzepte/multithreading_multiprocessing">Multithreading und Multiprocessing</a>
+<a class="dropdown-item" href="/konzepte/asynchrone_programmierung">Asynchrone Programmierung</a>
+<!-- Weitere Konzepte können hier hinzugefügt werden -->
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/wiki">Wiki</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/videos">Videos</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/quiz">Quiz</a>
+</li>
+</ul>
+</div>
+</nav>
+<header class="jumbotron text-center">
+<div class="container">
+<h1 class="display-4">Python Asynchrone Programmierung</h1>
+</div>
+</header>
+<section class="container my-5">
+<h2>Einführung in Asynchrone Programmierung</h2>
+<p>Asynchrone Programmierung ermöglicht es, Aufgaben parallel und unabhängig voneinander auszuführen, was die Leistung und Effizienz Ihrer Anwendungen verbessern kann. Weitere Informationen zur asynchronen Programmierung in Python finden Sie in der <a href="https://docs.python.org/3/library/asyncio.html" target="_blank">asyncio-Dokumentation</a>.</p>
+<h3>Grundlagen der asynchronen Programmierung</h3>
+<p>Asynchrone Programmierung in Python wird hauptsächlich mit Hilfe der <code>asyncio</code>-Bibliothek erreicht. Sie verwendet <code>async</code>- und <code>await</code>-Schlüsselwörter, um asynchrone Funktionen zu definieren und auszuführen.</p>
+<h3>Beispiele für asynchrone Programmierung</h3>
+<p>Hier sind einige Beispiele für die Verwendung von asynchroner Programmierung in Python:</p>
+<button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
+<div class="code-block" id="code-block-1"><button class="copy-button" onclick="copyToClipboard('code-block-1-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<pre><code id="code-block-1-code"># Einfache async/await Verwendung
 import asyncio
 
 async def sage_hello():
@@ -104,14 +100,12 @@ async def sage_hello():
 
 asyncio.run(sage_hello())
             </code></pre>
-        </div>
-
-        <h3>Mehrere Aufgaben gleichzeitig ausführen</h3>
-        <p>Mit <code>asyncio.gather</code> können mehrere asynchrone Aufgaben parallel ausgeführt werden.</p>
-        <button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
-        <div class="code-block" id="code-block-2">
-            <button class="copy-button" onclick="copyToClipboard('code-block-2-code')">Code kopieren</button>
-            <pre><code id="code-block-2-code"># Mehrere Aufgaben gleichzeitig ausführen
+</div>
+<h3>Mehrere Aufgaben gleichzeitig ausführen</h3>
+<p>Mit <code>asyncio.gather</code> können mehrere asynchrone Aufgaben parallel ausgeführt werden.</p>
+<button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
+<div class="code-block" id="code-block-2"><button class="copy-button" onclick="copyToClipboard('code-block-2-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<pre><code id="code-block-2-code"># Mehrere Aufgaben gleichzeitig ausführen
 async def aufgabe(n):
     print(f"Aufgabe {n} gestartet")
     await asyncio.sleep(1)
@@ -122,14 +116,12 @@ async def haupt():
 
 asyncio.run(haupt())
             </code></pre>
-        </div>
-
-        <h3>Asynchrone Funktionen kombinieren</h3>
-        <p>Asynchrone Funktionen können verschachtelt und kombiniert werden, um komplexere Abläufe zu erstellen.</p>
-        <button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
-        <div class="code-block" id="code-block-3">
-            <button class="copy-button" onclick="copyToClipboard('code-block-3-code')">Code kopieren</button>
-            <pre><code id="code-block-3-code"># Verschachtelte asynchrone Funktionen
+</div>
+<h3>Asynchrone Funktionen kombinieren</h3>
+<p>Asynchrone Funktionen können verschachtelt und kombiniert werden, um komplexere Abläufe zu erstellen.</p>
+<button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
+<div class="code-block" id="code-block-3"><button class="copy-button" onclick="copyToClipboard('code-block-3-code')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
+<pre><code id="code-block-3-code"># Verschachtelte asynchrone Funktionen
 async def aufgabe1():
     print("Aufgabe 1 gestartet")
     await asyncio.sleep(1)
@@ -146,27 +138,24 @@ async def haupt():
 
 asyncio.run(haupt())
             </code></pre>
-        </div>
-
-        <h3>Zusammenfassung</h3>
-        <p>Asynchrone Programmierung ist ein mächtiges Werkzeug, um die Leistung und Effizienz Ihrer Anwendungen zu verbessern. Sie ermöglicht es, Aufgaben parallel und unabhängig voneinander auszuführen. Weitere Informationen finden Sie in der <a href="https://docs.python.org/3/library/asyncio.html" target="_blank">asyncio-Dokumentation</a>.</p>
-    </section>
-
-    <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
-                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
-            </ul>
-            <p>© 2024 Python Schulungsseite</p>
-        </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
+</div>
+<h3>Zusammenfassung</h3>
+<p>Asynchrone Programmierung ist ein mächtiges Werkzeug, um die Leistung und Effizienz Ihrer Anwendungen zu verbessern. Sie ermöglicht es, Aufgaben parallel und unabhängig voneinander auszuführen. Weitere Informationen finden Sie in der <a href="https://docs.python.org/3/library/asyncio.html" target="_blank">asyncio-Dokumentation</a>.</p>
+</section>
+<footer class="bg-dark text-white text-center py-4">
+<div class="container">
+<img alt="Logo" class="mb-2" src="{{ url_for('static', filename='images/logo.jpg') }}" style="height: 50px;"/>
+<ul class="list-inline">
+<li class="list-inline-item"><a class="text-white" href="/impressum">Impressum</a></li>
+<li class="list-inline-item"><a class="text-white" href="/datenschutz">Datenschutz</a></li>
+</ul>
+<p>© 2024 Python Schulungsseite</p>
+</div>
+</footer>
+<script src="/static/js/jquery-3.5.1.slim.min.js"></script>
+<script src="/static/js/popper.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script>
         function toggleCode(id) {
             var codeBlock = document.getElementById(id);
             if (codeBlock.classList.contains('visible')) {

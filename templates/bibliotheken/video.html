@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Python Video-Bibliotheken</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Python Video-Bibliotheken</title>
+<link href="/static/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet"/>
+<style>
         .code-block {
             background-color: #f4f4f4;
             border: 1px solid #ccc;
@@ -35,58 +36,54 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/">Python Schulungsseite</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="/">Startseite</a>
-                </li>
-                <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownKonzepte" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<a class="navbar-brand" href="/">Python Schulungsseite</a>
+<button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav ml-auto">
+<li class="nav-item">
+<a class="nav-link" href="/">Startseite</a>
+</li>
+<li class="nav-item dropdown active">
+<a aria-expanded="false" aria-haspopup="true" class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="navbarDropdownKonzepte" role="button">
                         Bibliotheken
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownKonzepte">
-                        <a class="dropdown-item" href="/bibliotheken">Bibliotheken Übersicht</a>
-                        <a class="dropdown-item" href="/bibliotheken/video">Video</a>
-                        <!-- Weitere Bibliotheken können hier hinzugefügt werden -->
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/wiki">Wiki</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/videos">Videos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/quiz">Quiz</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+<div aria-labelledby="navbarDropdownKonzepte" class="dropdown-menu">
+<a class="dropdown-item" href="/bibliotheken">Bibliotheken Übersicht</a>
+<a class="dropdown-item" href="/bibliotheken/video">Video</a>
+<!-- Weitere Bibliotheken können hier hinzugefügt werden -->
+</div>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/wiki">Wiki</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/videos">Videos</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="/quiz">Quiz</a>
+</li>
+</ul>
+</div>
+</nav>
+<header class="jumbotron text-center">
+<div class="container">
+<h1 class="display-4">Python Video-Bibliotheken</h1>
+</div>
+</header>
+<section class="container my-5">
+<h2>Einführung in Video-Bibliotheken</h2>
+<p>Python bietet verschiedene Bibliotheken für die Verarbeitung und Analyse von Videos. Hier sind einige der beliebtesten und am häufigsten verwendeten Video-Bibliotheken in Python. Weitere Informationen finden Sie in der <a href="https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html" target="_blank">offiziellen OpenCV-Dokumentation</a>.</p>
+<h3>Beispiele für die Verwendung von Video-Bibliotheken</h3>
+<p>Hier sind einige Beispiele für die Verwendung von Video-Bibliotheken in Python:</p>
+<h4>Video mit OpenCV verarbeiten</h4>
+<p>OpenCV ist eine umfassende Bibliothek für die Verarbeitung von Bildern und Videos.</p>
+<button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
+<div class="code-block" id="code-block-1"><button class="copy-button" onclick="copyToClipboard('code-block-1')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 
-    <header class="jumbotron text-center">
-        <div class="container">
-            <h1 class="display-4">Python Video-Bibliotheken</h1>
-        </div>
-    </header>
-
-    <section class="container my-5">
-        <h2>Einführung in Video-Bibliotheken</h2>
-        <p>Python bietet verschiedene Bibliotheken für die Verarbeitung und Analyse von Videos. Hier sind einige der beliebtesten und am häufigsten verwendeten Video-Bibliotheken in Python. Weitere Informationen finden Sie in der <a href="https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html" target="_blank">offiziellen OpenCV-Dokumentation</a>.</p>
-
-        <h3>Beispiele für die Verwendung von Video-Bibliotheken</h3>
-        <p>Hier sind einige Beispiele für die Verwendung von Video-Bibliotheken in Python:</p>
-
-        <h4>Video mit OpenCV verarbeiten</h4>
-        <p>OpenCV ist eine umfassende Bibliothek für die Verarbeitung von Bildern und Videos.</p>
-        <button class="btn btn-link" onclick="toggleCode('code-block-1')">Beispielcode anzeigen</button>
-        <div class="code-block" id="code-block-1">
-            <button class="copy-button" onclick="copyToClipboard('code-block-1-code')">Code kopieren</button>
-            <pre><code id="code-block-1-code"># Video verarbeiten mit OpenCV
+<pre><code id="code-block-1-code"># Video verarbeiten mit OpenCV
 import cv2
 
 # Video-Datei laden
@@ -101,21 +98,20 @@ while cap.isOpened():
     cv2.imshow('Frame', frame)
     
     # Beenden bei Tastendruck 'q'
-    if cv2.waitKey(1) & 0xFF == ord('q'):
+    if cv2.waitKey(1) &amp; 0xFF == ord('q'):
         break
 
 # Ressourcen freigeben
 cap.release()
 cv2.destroyAllWindows()
             </code></pre>
-        </div>
+</div>
+<h4>Video mit moviepy bearbeiten</h4>
+<p>MoviePy ist eine Bibliothek zur Bearbeitung von Video-Dateien, die benutzerfreundlich und flexibel ist.</p>
+<button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
+<div class="code-block" id="code-block-2"><button class="copy-button" onclick="copyToClipboard('code-block-2')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 
-        <h4>Video mit moviepy bearbeiten</h4>
-        <p>MoviePy ist eine Bibliothek zur Bearbeitung von Video-Dateien, die benutzerfreundlich und flexibel ist.</p>
-        <button class="btn btn-link" onclick="toggleCode('code-block-2')">Beispielcode anzeigen</button>
-        <div class="code-block" id="code-block-2">
-            <button class="copy-button" onclick="copyToClipboard('code-block-2-code')">Code kopieren</button>
-            <pre><code id="code-block-2-code"># Video bearbeiten mit MoviePy
+<pre><code id="code-block-2-code"># Video bearbeiten mit MoviePy
 from moviepy.editor import VideoFileClip
 
 # Video laden
@@ -127,14 +123,13 @@ clip_cut = clip.subclip(0, 10)  # Erste 10 Sekunden
 # Exportieren
 clip_cut.write_videofile("video_cut.mp4")
             </code></pre>
-        </div>
+</div>
+<h4>Video mit imageio verarbeiten</h4>
+<p>Imageio ist eine Bibliothek zur Verarbeitung von Bildern und Videos.</p>
+<button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
+<div class="code-block" id="code-block-3"><button class="copy-button" onclick="copyToClipboard('code-block-3')" style="background-color: red; color: white; font-size: 16px; padding: 10px;">Code kopieren</button>
 
-        <h4>Video mit imageio verarbeiten</h4>
-        <p>Imageio ist eine Bibliothek zur Verarbeitung von Bildern und Videos.</p>
-        <button class="btn btn-link" onclick="toggleCode('code-block-3')">Beispielcode anzeigen</button>
-        <div class="code-block" id="code-block-3">
-            <button class="copy-button" onclick="copyToClipboard('code-block-3-code')">Code kopieren</button>
-            <pre><code id="code-block-3-code"># Video verarbeiten mit Imageio
+<pre><code id="code-block-3-code"># Video verarbeiten mit Imageio
 import imageio
 
 # Video laden
@@ -146,46 +141,59 @@ for frame in reader:
     imageio.imwrite('frame.jpg', frame)
     break
             </code></pre>
-        </div>
+</div>
+<h3>Zusammenfassung</h3>
+<p>Python bietet eine Vielzahl von Bibliotheken für die Videobearbeitung, die die Arbeit mit Video-Dateien erleichtern. Weitere Informationen finden Sie in der <a href="https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html" target="_blank">offiziellen OpenCV-Dokumentation</a>.</p>
+</section>
+<footer class="bg-dark text-white text-center py-4">
+<div class="container">
+<img alt="Logo" class="mb-2" src="{{ url_for('static', filename='images/logo.jpg') }}" style="height: 50px;"/>
+<ul class="list-inline">
+<li class="list-inline-item"><a class="text-white" href="/impressum">Impressum</a></li>
+<li class="list-inline-item"><a class="text-white" href="/datenschutz">Datenschutz</a></li>
+</ul>
+<p>© 2024 Python Schulungsseite</p>
+</div>
+</footer>
+<script src="/static/js/jquery-3.5.1.slim.min.js"></script>
+<script src="/static/js/popper.min.js"></script>
+<script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-        <h3>Zusammenfassung</h3>
-        <p>Python bietet eine Vielzahl von Bibliotheken für die Videobearbeitung, die die Arbeit mit Video-Dateien erleichtern. Weitere Informationen finden Sie in der <a href="https://docs.opencv.org/4.x/d6/d00/tutorial_py_root.html" target="_blank">offiziellen OpenCV-Dokumentation</a>.</p>
-    </section>
 
-    <footer class="bg-dark text-white text-center py-4">
-        <div class="container">
-            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo" class="mb-2" style="height: 50px;">
-            <ul class="list-inline">
-                <li class="list-inline-item"><a href="/impressum" class="text-white">Impressum</a></li>
-                <li class="list-inline-item"><a href="/datenschutz" class="text-white">Datenschutz</a></li>
-            </ul>
-            <p>© 2024 Python Schulungsseite</p>
-        </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrap.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-        function toggleCode(id) {
-            var codeBlock = document.getElementById(id);
-            if (codeBlock.classList.contains('visible')) {
-                codeBlock.classList.remove('visible');
-            } else {
-                codeBlock.classList.add('visible');
-            }
+<script>
+    function toggleCode(id) {
+        var codeBlock = document.getElementById(id);
+        if (codeBlock.classList.contains('visible')) {
+            codeBlock.classList.remove('visible');
+        } else {
+            codeBlock.classList.add('visible');
         }
+    }
 
-        function copyToClipboard(id) {
-            var copyText = document.getElementById(id + '-code').textContent;
-            var textArea = document.createElement("textarea");
-            textArea.value = copyText;
-            document.body.appendChild(textArea);
-            textArea.select();
-            document.execCommand("Copy");
-            textArea.remove();
+    function copyToClipboard(id) {
+        var copyText = document.querySelector('#' + id + ' pre code').textContent;
+        var textArea = document.createElement("textarea");
+        textArea.style.position = "fixed";
+        textArea.style.top = 0;
+        textArea.style.left = 0;
+        textArea.style.width = "2em";
+        textArea.style.height = "2em";
+        textArea.style.padding = 0;
+        textArea.style.border = "none";
+        textArea.style.outline = "none";
+        textArea.style.boxShadow = "none";
+        textArea.style.background = "transparent";
+        textArea.value = copyText;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand("copy");
             alert("Code kopiert!");
+        } catch (err) {
+            console.error("Konnte nicht kopieren", err);
         }
+        document.body.removeChild(textArea);
+    }
     </script>
 </body>
 </html>

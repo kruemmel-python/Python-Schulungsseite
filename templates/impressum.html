@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impressum</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Impressum</title>
+<style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -22,18 +23,55 @@
     </style>
 </head>
 <body>
-    <h1>Impressum</h1>
-    <p>Angaben gemäß § 5 TMG</p>
-    <div class="contact-info">
-        <p>Ralf Krümmel</p>
-        <p>Wintergartenstraße, 2</p>
-        <p>04103 Leipzig</p>
-    </div>
-    <div class="contact-info">
-        <h2>Kontakt</h2>
-        <p>Telefon: [Telefonnummer]</p>
-        <p>E-Mail: <a href="mailto:morningstar@lichtbringer.online">morningstar@lichtbringer.online</a></p>
-    </div>
-    <p class="source">Quelle: <a href="https://www.e-recht24.de/impressum-generator.html">e-recht24.de/impressum-generator.html</a></p>
+<h1>Impressum</h1>
+<p>Angaben gemäß § 5 TMG</p>
+<div class="contact-info">
+<p>Ralf Krümmel</p>
+<p>Wintergartenstraße, 2</p>
+<p>04103 Leipzig</p>
+</div>
+<div class="contact-info">
+<h2>Kontakt</h2>
+<p>Telefon: [Telefonnummer]</p>
+<p>E-Mail: <a href="mailto:morningstar@lichtbringer.online">morningstar@lichtbringer.online</a></p>
+</div>
+<p class="source">Quelle: <a href="https://www.e-recht24.de/impressum-generator.html">e-recht24.de/impressum-generator.html</a></p>
+
+
+<script>
+    function toggleCode(id) {
+        var codeBlock = document.getElementById(id);
+        if (codeBlock.classList.contains('visible')) {
+            codeBlock.classList.remove('visible');
+        } else {
+            codeBlock.classList.add('visible');
+        }
+    }
+
+    function copyToClipboard(id) {
+        var copyText = document.querySelector('#' + id + ' pre code').textContent;
+        var textArea = document.createElement("textarea");
+        textArea.style.position = "fixed";
+        textArea.style.top = 0;
+        textArea.style.left = 0;
+        textArea.style.width = "2em";
+        textArea.style.height = "2em";
+        textArea.style.padding = 0;
+        textArea.style.border = "none";
+        textArea.style.outline = "none";
+        textArea.style.boxShadow = "none";
+        textArea.style.background = "transparent";
+        textArea.value = copyText;
+        document.body.appendChild(textArea);
+        textArea.select();
+        try {
+            document.execCommand("copy");
+            alert("Code kopiert!");
+        } catch (err) {
+            console.error("Konnte nicht kopieren", err);
+        }
+        document.body.removeChild(textArea);
+    }
+    </script>
 </body>
 </html>
