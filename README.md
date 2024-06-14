@@ -24,7 +24,7 @@ Dieses Projekt ist eine umfassende Webanwendung zum Erlernen der Grundlagen von 
 1. Klonen Sie das Repository:
 
    ```bash
-   git clone https://github.com/IhrBenutzername/python-schulungsseite.git
+   git clone https://github.com/kruemmel-python/python-schulungsseite.git
    cd python-schulungsseite
 
 
